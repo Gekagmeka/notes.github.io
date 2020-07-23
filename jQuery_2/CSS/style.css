@@ -27,3 +27,6 @@
 	padding:20px 40px;
 	background-color:#f123fe;
 }
+.tab.active .tab__content{
+	display:block;
+}
