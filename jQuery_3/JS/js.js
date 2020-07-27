@@ -1,4 +1,4 @@
-$('.tab__title').click(function(){
+$('.tab__title').on('click', function(){
 	if($(this).parent('.tab').hasClass('active')) {
 		$(this).parent('.tab').removeClass('active');
 	} else{
