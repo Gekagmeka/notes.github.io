@@ -48,10 +48,10 @@ li{
 	transition:all 0.3s ease-in;
 }
 
-.list__input:checked + .list__title::after{ /*это соседние элементы - значит можно использовать (+)*/
+.list__input:checked + .list__title::after{ /*это соседние элементы - значит можно использовать - непосредственно после указанного элемента (+)*/
 	transform:rotate(225deg);
 }
-.list__input:checked ~ .list__content{ /*input и section не соседние элементы (+) , поэтому для них нужно выбрать все дочерние (~)*/
+.list__input:checked ~ .list__content{ /*input и section не соседние элементы (+) , поэтому для них нужно выбрать все соседние, которые нах-ся на том же уровне (~)*/
 	display:block;
 }
 .list__input:checked + .list__title{
