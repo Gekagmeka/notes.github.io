@@ -1,0 +1,32 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	border:0;
+}
+
+.container{
+	max-width:1024px;
+	padding:20px 10px;
+	margin:0 auto;
+}
+.tab{
+	border:1px solid #000;
+	border-radius:5px;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+.tab__title{
+	padding:10px 15px;
+	background-color:#e1e1e1;
+	cursor:pointer;
+	font:30px/34px Arial, Helvetica, sans-serif; color:#000;
+}
+.tab__content{
+	display:none;
+	padding:20px 40px;
+	background-color:#f123fe;
+}
+.tab.active .tab__content{
+	display:block;
+}
