@@ -1,3 +1,1 @@
-$('.tab__title').on('click', function(){
-	$(this).next('.tab__content').slideToggle();
-});
+$('.menu__item').has('.menu__arrow').addClass('bbb');

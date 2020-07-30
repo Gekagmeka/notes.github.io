@@ -28,6 +28,18 @@ body{
 	text-decoration:none;
 }
 
+.menu__arrow{
+	display:none;
+	position:absolute;
+	top:8px;
+	right:0;
+	width:0;
+	height:0;
+	border-top:10px solid #000;
+	border-left:10px solid transparent;
+	border-right:10px solid transparent;
+}
+
 
 /*The first level*/
 .menu__list{
@@ -56,10 +68,6 @@ body{
 	color:#000;
 }
 
-.menu__item:hover .sub-menu__list{
-	display:block;
-}
-
 
 /*The third level*/
 .low-sub-menu__list{
@@ -77,6 +85,23 @@ body{
 	display:inline-block;
 	padding:5px 10px;
 }
-.sub-menu__item:hover .low-sub-menu__list{
+
+
+/*media queries*/
+@media screen and (min-width:1024px){
+	.menu__item:hover .sub-menu__list{
 	display:block;
+}
+	.sub-menu__item:hover .low-sub-menu__list{
+		display:block;
+	}
+}
+
+@media screen and (max-width:1023px){
+	.menu__arrow{
+		display:block;
+	}
+	.menu__item.bbb{
+		padding:0 25px 0 0;
+	}
 }
