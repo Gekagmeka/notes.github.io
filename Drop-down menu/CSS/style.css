@@ -129,4 +129,24 @@ body{
 	.menu__list{
 		display:block;
 	}
+	.sub-menu__list,
+	.low-sub-menu__list{
+		position:relative;
+		top:0;
+		left:0;
+		padding:5px 0;
+	}
+	.low-sub-menu__item{
+		padding:0 0 0 5px;
+	}
+	.sub-menu__arrow.arrow{
+		top:12px;
+		border-top:6px solid #000;
+		border-bottom:none;
+		border-left:6px solid transparent;
+		border-right:6px solid transparent;
+	}
+	.menu__item{
+		margin:0 0 5px 0;
+	}
 }
