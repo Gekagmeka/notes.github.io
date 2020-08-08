@@ -1,0 +1,16 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+.wrapper{
+	max-width:1024px;
+	width:100%;
+	margin:0 auto;
+}
+.container{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+}
