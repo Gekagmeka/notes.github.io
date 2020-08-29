@@ -1,0 +1,8 @@
+We initialized only with data attributes on <a> without JavaScript!!!
+
+You can use
+1) data-fancybox (image will be only opened - without swiping the other images)
+2) data-fancybox="gallery" (other images will be swiped like a gallery)
+3) data-caption="This image has a simple caption/name" (give name of the image)
+
+Когда картинка не влазит, тогда отображается возможность приблизить (Zoom)

@@ -1,0 +1,33 @@
+We initialized with JavaScript!!!
+
+You can use different properties like
+
+$('[data-fancybox="gallery"]').fancybox({
+	buttons : [
+		'slideShow',
+		'share',
+		'zoom',
+		'fullScreen',
+		'close'
+	],
+	thumbs : {
+		autoStart: true
+	},
+	protect: true
+});
+
+
+Where
+1) 'slideShow' = allows to play slides, that are connected in gallery
+2) 'share' = add a button in browser 'to share'
+3) 'zoom' = allows to bring closer/move away if image is very big and it doesn't place in screen
+4) 'fullScreen' = allow to be this button when image is opened
+5) 'close' = allows to be this button when image is opened
+6) thumbs : {
+		autoStart: true
+	} = other diffetnt images also are viewed, but they are in the right top corner
+7) protect: true = allows to save copyright (you can't to copy the image)
+
+
+More options you can find here:
+https://fancyapps.com/fancybox/3/docs/#options  
