@@ -1,0 +1,47 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+ul{
+	list-style-type:none;
+}
+.container{
+	max-width:600px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#ccc;
+}
+
+.list{
+	display:flex;
+	justify-content:space-around;
+	padding:20px;
+}
+
+.link{
+	color:#000;
+	text-decoration:none;
+	font-size:20px;
+	position:relative;
+}
+.link::after{
+	content:'';
+	width:100%;
+	height:2px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background-color:currentcolor;
+	
+	transform:scaleX(0); /*default scale(1)*/
+	transition:transform 0.3s ease-in;
+	
+	/*опорные точки по дефолту в центре нах-ся (X, Y)
+	transform-origin:center center*/
+	transform-origin:left center; /*точка  находится по ОХ слева
+	, по ОУ по цетру*/
+}
+.link:hover::after{
+	transform:scaleX(1);
+}
