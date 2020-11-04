@@ -1,0 +1,17 @@
+body{
+	font-size:20px;
+	display:flex;
+	justify-content:center;
+}
+h1{
+	font-size:40px;
+	@media (max-width:767px){
+		font-size:15px;
+	}
+}
+p{
+	font-size:13px;
+	@media (max-width:767px){
+		font-size:40px;
+	}
+}
