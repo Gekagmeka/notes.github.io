@@ -1,0 +1,102 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+}
+
+.container{
+	max-width:600px;
+	margin:0 auto;
+	padding:20px;
+	background-color:#ccc;
+}
+
+.button {
+	background-color: transparent;
+	outline: none;
+	/* border: none; */
+	padding: 15px 30px;
+
+	position: relative;
+}
+
+/* .top */
+.top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 4px;
+	width: 100%;
+	background-color: #f00;
+
+	transform: scaleX(0);
+	transition: all 0.3s ease-in-out;
+	/* смещение точки вращения */
+	transform-origin: left center;
+
+}
+.button:hover .top {
+	transform: scaleX(1);
+	/* после hover линия будет уходить вправо по оси Х */
+	transform-origin: right center;
+}
+
+/* .button::after */
+.button::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 4px;
+	height: 100%;
+	background-color: #f00;
+
+	transform: scaleY(0);
+	transition: all 0.3s ease-in-out;
+	transform-origin: center top;
+}
+.button:hover::after {
+	transform: scaleY(1);
+	transform-origin: center bottom;
+}
+
+/* .bottom */
+.bottom {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 4px;
+	width: 100%;
+	background-color: #f00;
+
+	transform: scaleX(0);
+	transition: all 0.3s ease-in-out;
+	/* смещение точки вращения */
+	transform-origin: right center; /*точка  находится по ОХ справа
+	, по ОУ по цетру*/
+
+}
+.button:hover .bottom {
+	transform: scaleX(1);
+	/* после hover линия будет уходить вправо по оси Х */
+	transform-origin: left center;
+}
+
+/* .button::before */
+.button::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 4px;
+	height: 100%;
+	background-color: #f00;
+
+	transform: scaleY(0);
+	transition: all 0.3s ease-in-out;
+	transform-origin: center bottom;
+}
+.button:hover::before {
+	transform: scaleY(1);
+	transform-origin: center top;
+}
