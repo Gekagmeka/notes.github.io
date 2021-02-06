@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  padding: 40px 0;
+}
+
+.custom-input {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #27B2E5;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+}
+
+.custom-input::before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.custom-input:checked {
+  background-color: #ccc;
+}
+
+.custom-input:checked::before {
+  right: calc(100% - 19px);
+}
+/*# sourceMappingURL=style.css.map */
