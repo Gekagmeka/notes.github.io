@@ -1,0 +1,94 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: rgb(211, 216, 219);
+}
+
+.container {
+   width: 100%;
+   max-width: 1200px;
+   margin: 0 auto;
+}
+
+.content {
+   padding: 40px 0;
+}
+
+.custom-group {
+   width: 34px;
+   height: 20px;
+   border-radius: 20px;
+   overflow: hidden;
+
+   display: flex;
+   justify-content: space-between;
+   
+   .checkmark {
+      width: 100%;
+      height: 100%;
+      display: none;
+   }
+
+   .custom-label {
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+
+      .custom-input {
+         display: none;
+
+         &:checked {
+            + .checkmark {
+               display: inline-block;
+               position: relative;
+               &::before {
+                  content: '';
+                  position: absolute;
+                  top: 1px;
+                  width: 18px;
+                  height: 18px;
+                  border-radius: 50%;
+                  background-color: #fff;
+                  // left: 1px; // у каждого свой отступ
+               }
+            }
+         }
+      }
+
+      &.custom-label-free {
+         background-color: #000;
+         .custom-input {
+            &:checked {
+               + .checkmark {
+                  background-color: #27B2E5;
+                  &::before {
+                     left: calc(100% - 19px);  
+                  }
+               }
+            }
+         }
+      }
+
+      &.custom-label-month {
+         background-color: #27B2E5;
+         .custom-input {
+            &:checked {
+               + .checkmark {
+                  background-color: #000;
+                  &::before {
+                     left: 1px;  
+                  }
+               }
+            }
+         }
+      }
+      
+   }
+  
+}
+
+
