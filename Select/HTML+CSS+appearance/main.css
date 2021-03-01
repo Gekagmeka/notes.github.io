@@ -1,0 +1,66 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 30px;
+}
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+  font-size: 20px;
+  background-color: #ccc;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+.select-block {
+  position: relative;
+  width: 100%;
+  background-color: #ccc;
+  max-height: 200px;
+  height: 100%;
+  overflow: hidden;
+}
+
+.select {
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.select:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+.arrow {
+  display: inline-block;
+  background-color: #000;
+  width: 15px;
+  height: 15px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -7px;
+  pointer-events: none;
+}
+/*# sourceMappingURL=main.css.map */

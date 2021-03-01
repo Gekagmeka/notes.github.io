@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+}
+
+.form-group {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+label {
+  color: #303030;
+  font: 400 16px/1.75 "Poppins", sans-serif;
+  display: block;
+  line-height: 1.3;
+  margin: 0 0 3px;
+}
+
+input {
+  display: block;
+  padding: 10px 15px;
+  width: 100%;
+  background: #ffffff;
+  outline: none;
+  border: 1px solid #E5E9EC;
+  border-radius: 5px;
+  margin: 0;
+  color: #666666;
+  font: 300 14px/24px "Poppins", sans-serif;
+}
+
+.dropcontainer {
+  position: relative;
+}
+
+.dropdownhidden {
+  display: none;
+}
+
+.dropdownhidden.active {
+  display: block;
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  margin-top: 4px;
+  padding: 7px 0;
+  z-index: 100;
+  border: 0 none;
+  border-radius: 5px;
+  list-style-type: none;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 40, 75, 0.098);
+          box-shadow: 0px 3px 6px rgba(0, 40, 75, 0.098);
+}
+
+.dropdownhidden.active li {
+  padding: 9px 16px;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.dropdownhidden.active li:hover {
+  background: rgba(214, 244, 253, 0.502);
+  outline: none;
+}
+
+.dropdownhidden.active li:last-child {
+  border-bottom: none;
+}
+
+.dropdownhidden.active li:first-child {
+  display: none;
+}
+
+.dropdownhidden.active a {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #ccc;
+  font-weight: 300;
+}
+
+.trigger {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  width: 100%;
+  background: #ffffff;
+  outline: none;
+  border: 1px solid #E5E9EC;
+  border-radius: 5px;
+  margin: 0;
+  color: #666666;
+  font: 300 14px/24px "Poppins", sans-serif;
+}
+
+.trigger::before {
+  background: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fru%2Fpng-zxmpx&psig=AOvVaw2NRDNysLuB8vUz2klcsda1&ust=1613559147792000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCODlg7Ke7u4CFQAAAAAdAAAAABAN) center no-repeat;
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 7px;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.trigger.active::before {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+/*# sourceMappingURL=main.css.map */
