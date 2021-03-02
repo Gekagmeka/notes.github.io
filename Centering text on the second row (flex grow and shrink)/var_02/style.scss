@@ -1,0 +1,27 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.content {
+   max-width: 600px;
+   margin: 0 auto;
+   border: 2px solid #000;
+   font: 20px/1.5 Arial, sans-serif;
+}
+
+.box {
+   display: flex;
+   flex-wrap: wrap;
+   // justify-content: space-between;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.text {
+//   flex-shrink: 1; - it's not necessary if we don't have jcsb
+  margin: 0 auto; //this variant also will work, if we have flex-grow: 1; on the title - it's important
+}
