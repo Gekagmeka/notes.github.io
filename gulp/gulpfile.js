@@ -89,10 +89,21 @@ let { src, dest } = require('gulp'),
 		.pipe(browsersync.stream())
 	}
 	
+	//addded for images
+	function images() {
+		//working variant
+		return gulp.src('./#src/img/**/*')
+		.pipe(gulp.dest('./dist/img/'))
+		
+		// return src(path.src.img)
+		// 	 .pipe(dest(path.build.img))
+	}
+
 	// create new function for live tracking our updated files (html, css ...)
 	function watchfiles(params) {
 		gulp.watch([path.watch.html], html); //tracking folder with our html updated files
 		gulp.watch([path.watch.css], css); //tracking folder with our css updated files
+		gulp.watch([path.watch.img], images);
 	}
 	
 	// create new function for deleting old folder dist before every gulp's starting
@@ -102,7 +113,7 @@ let { src, dest } = require('gulp'),
 	}
 	
 	
-	let build = gulp.series(clean, gulp.parallel(css, html)); //variable for function html(), and then we must add this variable into the  variable "watch" - there will be our series of executed functions + css and html are executed in parellel way
+	let build = gulp.series(clean, gulp.parallel(css, html, images)); //variable for function html(), and then we must add this variable into the  variable "watch" - there will be our series of executed functions + css and html are executed in parellel way
 	
 	let watch = gulp.parallel(build, watchfiles, browserSync);
 	
@@ -110,6 +121,7 @@ let { src, dest } = require('gulp'),
 	// to connect GULP with new variables - we use "exports" for everyone
 	exports.css = css;
 	exports.html = html;
+	exports.images = images;
 	exports.build = build;
 	
 	exports.watch = watch;
