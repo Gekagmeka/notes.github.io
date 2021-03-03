@@ -1,0 +1,4 @@
+1) npm install
+2) if there are mistakes - try again the first variant, if it doesn't help:
+	npm install --global gulp-cli
+3) gulp
