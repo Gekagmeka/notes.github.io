@@ -14,14 +14,16 @@ let path = { //contains paths to different folders
 		html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
 		css: source_folder + "/scss/style.scss",
 		js: source_folder + "/js/srcipt.js",
-		img: source_folder + "/img/**/*.{jpg, png, gif, svg, webp}",
+		img: source_folder + "/img/**/*",
+		//doesn't work
+		// img: source_folder + "/img/**/*.{jpg, png, gif, svg, webp}",
 		fonts: source_folder + "/fonts/*.{ttf, eot, woff, woff2}",
 	},
 	watch: {//every time watching for folders
 		html: source_folder + "/**/*.html",
 		css: source_folder + "/scss/**/*.scss",
 		js: source_folder + "/js/**/*.js",
-		img: source_folder + "/img/**/*.{jpg, png, gif, svg, webp}"
+		img: source_folder + "/img/**/*"
 	},
 	clean: "./" + project_folder + "/"
 }
@@ -92,11 +94,12 @@ let { src, dest } = require('gulp'),
 	//addded for images
 	function images() {
 		//working variant
-		return gulp.src('./#src/img/**/*')
-		.pipe(gulp.dest('./dist/img/'))
+		// return gulp.src('./#src/img/**/*')
+		// .pipe(gulp.dest('./dist/img/'))
 		
-		// return src(path.src.img)
-		// 	 .pipe(dest(path.build.img))
+		//working too
+		return src(path.src.img)
+		.pipe(dest(path.build.img))
 	}
 
 	// create new function for live tracking our updated files (html, css ...)
