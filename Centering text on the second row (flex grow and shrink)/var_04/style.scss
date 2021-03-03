@@ -1,0 +1,38 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.content {
+   max-width: 600px;
+   margin: 0 auto;
+   border: 2px solid #000;
+   font: 20px/1.5 Arial, sans-serif;
+}
+
+.box {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+//flex-grow: 1000; and flex-grow: 1;
+.title1 {
+  flex-grow: 1000;
+  background-color: #ccc;
+}
+.text1 {
+   flex-grow: 1;
+   background-color: rgb(245, 173, 173);
+   text-align: center; //to center text on the second line
+}
+
+//flex-grow: 1; and flex-grow: 0 (default);
+.title2 {
+   flex-grow: 1;
+   background-color: #ccc;
+ }
+ .text2 {
+    background-color: #a78787;
+ }
+ 
