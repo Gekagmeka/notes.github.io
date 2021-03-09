@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ccc;
+}
+
+.menu {
+  padding: 100px 0;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.list .list__item {
+  margin: 30px 10px;
+  max-width: 300px;
+  background-color: #eee;
+  width: 100%;
+  padding: 40px 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-box {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  height: 40px;
+  cursor: pointer;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.info-box:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.info-box .icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.info-box .icon svg {
+  fill: #00f;
+}
+
+.info-box .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #3d3d3d;
+}
+
+.info-box .tooltip::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-top: 16px solid #0f0;
+  border-right: 16px solid transparent;
+  border-left: 16px solid transparent;
+}
+
+.info-box .tooltip p {
+  color: #fff;
+}
+/*# sourceMappingURL=style.css.map */
