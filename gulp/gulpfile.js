@@ -13,7 +13,7 @@ let path = { //contains paths to different folders
 	src: { //my working folder
 		html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
 		css: source_folder + "/scss/style.scss",
-		js: source_folder + "/js/srcipt.js",
+		js: source_folder + "/js/script.js",
 		img: source_folder + "/img/**/*",
 		//doesn't work
 		// img: source_folder + "/img/**/*.{jpg, png, gif, svg, webp}",
@@ -62,6 +62,13 @@ let { src, dest } = require('gulp'),
 		.pipe(browsersync.stream())
 	}
 	
+	//for js
+	function js() {
+		return src(path.src.js) // we choose all js files in folder src/js
+		.pipe(dest(path.build.js)) // function, where we can write different code for GULP - the folder must contain new folder (client's folder)
+		.pipe(browsersync.stream())
+	}
+
 	// for css files
 	// create new function for the working of css files
 	function css() {
@@ -106,6 +113,7 @@ let { src, dest } = require('gulp'),
 	function watchfiles(params) {
 		gulp.watch([path.watch.html], html); //tracking folder with our html updated files
 		gulp.watch([path.watch.css], css); //tracking folder with our css updated files
+		gulp.watch([path.watch.js], js); //js files
 		gulp.watch([path.watch.img], images);
 	}
 	
@@ -116,7 +124,7 @@ let { src, dest } = require('gulp'),
 	}
 	
 	
-	let build = gulp.series(clean, gulp.parallel(css, html, images)); //variable for function html(), and then we must add this variable into the  variable "watch" - there will be our series of executed functions + css and html are executed in parellel way
+	let build = gulp.series(clean, gulp.parallel(css, html, js, images)); //variable for function html(), and then we must add this variable into the  variable "watch" - there will be our series of executed functions + css and html are executed in parellel way
 	
 	let watch = gulp.parallel(build, watchfiles, browserSync);
 	
@@ -124,6 +132,7 @@ let { src, dest } = require('gulp'),
 	// to connect GULP with new variables - we use "exports" for everyone
 	exports.css = css;
 	exports.html = html;
+	exports.js = js;
 	exports.images = images;
 	exports.build = build;
 	
