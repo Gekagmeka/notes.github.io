@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.info-box {
+  display: inline-block;
+}
+
+.info-box .icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+
+.info-box .icon svg {
+  fill: #E5E9EC;
+}
+
+.info-box .tooltip {
+  display: block;
+}
+
+.info-box .tooltip p {
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 16px;
+  text-align: center;
+}
+/*# sourceMappingURL=stye.css.map */
