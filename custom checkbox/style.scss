@@ -1,0 +1,85 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: rgb(211, 216, 219);
+}
+
+.container {
+   width: 100%;
+   max-width: 1230px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+
+.content {
+   padding: 40px 0;
+}
+
+
+.custom-group {
+   position: relative;
+   
+   //hide basic input
+   .custom-input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      opacity: 0;
+      &:checked {
+         + .fake-checkbox {
+            &::before,
+            &::after {
+               display: block;
+            }
+         }
+      }
+   }
+   //and show our custom span like an input
+   .fake-checkbox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      border: 1px solid rgb(136, 135, 135);
+      // overflow: hidden;
+      &::after {
+         display: none;
+         content: '';
+         position: absolute;
+         top: 7px;
+         left: 3px;
+         width: 16px;
+         height: 3px;
+         background-color: #f00;
+         transform: rotate(-60deg);
+         border-radius: 3px 3px 0 0;
+      }
+      &::before {
+         display: none;
+         content: '';
+         position: absolute;
+         top: 10px;
+         left: 1px;
+         width: 10px;
+         height: 3px;
+         background-color: #f00;
+         transform: rotate(60deg);
+         border-radius: 3px 3px 0 0;
+      }
+   }
+   .label {
+      padding-left: 30px;
+      line-height: 20px;
+      
+      // display: inline-block; 
+   }
+}
+
