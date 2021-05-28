@@ -1,0 +1,73 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #bebebe;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*добавляем для IE , потмоу что без этого на 100vh блок не будет растянут*/
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.fullscreen {
+  min-height: 100vh;
+  background-color: #eee;
+  padding: 40px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /*что б внутренний блок тянулся на 100% высоты*/
+}
+
+.container {
+  width: 100%;
+  max-width: 1230px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.fullscreen-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.text {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.link {
+  background-color: #ccc;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.section-bg {
+  background: url("../images/bg-01.jpg") no-repeat center center/cover fixed;
+}
+/*# sourceMappingURL=style.css.map */
