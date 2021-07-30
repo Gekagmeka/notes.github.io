@@ -26,11 +26,11 @@ let ulList = document.querySelector('.list');
 //before ulList
 //ulList.before(newElement);
 
-//after ulList
-//ulList.after(newElement);
-
 //into ulList before the content
 //ulList.prepend(newElement);
 
 //into ulList after the content
-ulList.append(newElement);
+//ulList.append(newElement);
+
+//after ulList
+//ulList.after(newElement);
