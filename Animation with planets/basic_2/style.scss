@@ -1,0 +1,76 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+}
+
+.container {
+   width: 100%;
+   max-width: 1230px;
+   padding: 0 15px;
+   margin: 0 auto;
+}
+
+ul {
+   list-style: none;
+}
+
+.content {
+   width: 600px;
+   height: 600px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgb(92, 133, 207);
+}
+
+.moving-line {
+   position: relative;
+   width: 80%;
+   height: 80%;
+
+   .planet-sun {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgb(251, 255, 202);
+      background: linear-gradient(#d49e46, #e1e791, #eaeec6);
+      // background: radial-gradient(#d49e46, #e1e791, #eaeec6);
+   }
+
+   .earth {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -30px;
+      transform: rotate(30deg) translateX(250px) rotate(-30deg);
+      
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      background: linear-gradient(rgb(96, 218, 96), rgb(23, 57, 131));
+      box-shadow: 0 0 10px rgba(223, 211, 211, 0.411);
+
+      animation: rotating 20s linear infinite;
+   }
+}
+
+@keyframes rotating {
+   from {
+      transform: rotate(0deg) translateX(250px) rotate(0deg);
+   }
+   to {
+      transform: rotate(360deg) translateX(250px) rotate(-360deg);
+   }
+}
