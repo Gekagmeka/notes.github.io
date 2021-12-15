@@ -1,0 +1,253 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.chart-skills {
+  position: relative;
+  width: 350px;
+  height: 175px;
+  overflow: hidden;
+}
+
+.chart-skills::before {
+  content: '';
+  position: absolute;
+  width: calc(100% - 80px);
+  height: 100%;
+  border: 40px solid #dadada;
+  border-bottom: none;
+  border-top-left-radius: 175px;
+  border-top-right-radius: 175px;
+}
+
+.chart-skills .list-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  left: 0;
+  border: 40px solid #804444;
+  border-top: none;
+  border-bottom-left-radius: 175px;
+  border-bottom-right-radius: 175px;
+  -webkit-transform-origin: 50% 0;
+          transform-origin: 50% 0;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.chart-skills .list-item:nth-child(1) {
+  z-index: 4;
+  -webkit-animation-name: rotate-one;
+          animation-name: rotate-one;
+}
+
+.chart-skills .list-item:nth-child(1) span {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-54deg);
+          transform: rotate(-54deg);
+}
+
+.chart-skills .list-item:nth-child(2) {
+  z-index: 3;
+  border-color: #a5bb45;
+  -webkit-animation-name: rotate-two;
+          animation-name: rotate-two;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.chart-skills .list-item:nth-child(2) span {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-108deg);
+          transform: rotate(-108deg);
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.chart-skills .list-item:nth-child(3) {
+  z-index: 2;
+  border-color: #387a4e;
+  -webkit-animation-name: rotate-three;
+          animation-name: rotate-three;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.chart-skills .list-item:nth-child(3) span {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-153deg);
+          transform: rotate(-153deg);
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.chart-skills .list-item:nth-child(4) {
+  z-index: 1;
+  border-color: #32377a;
+  -webkit-animation-name: rotate-four;
+          animation-name: rotate-four;
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.chart-skills .list-item:nth-child(4) span {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s;
+}
+
+.chart-skills span {
+  position: absolute;
+  opacity: 0;
+  -webkit-animation: fade-in 1s linear forwards;
+          animation: fade-in 1s linear forwards;
+}
+
+.chart-skills span:nth-child(1) {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-54deg);
+          transform: rotate(-54deg);
+}
+
+.chart-skills span:nth-child(2) {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-108deg);
+          transform: rotate(-108deg);
+}
+
+.chart-skills span:nth-child(3) {
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate(-153deg);
+          transform: rotate(-153deg);
+}
+
+@-webkit-keyframes rotate-one {
+  100% {
+    -webkit-transform: rotate(54deg);
+            transform: rotate(54deg);
+  }
+}
+
+@keyframes rotate-one {
+  100% {
+    -webkit-transform: rotate(54deg);
+            transform: rotate(54deg);
+  }
+}
+
+@-webkit-keyframes rotate-two {
+  0% {
+    -webkit-transform: rotate(54deg);
+            transform: rotate(54deg);
+  }
+  100% {
+    -webkit-transform: rotate(108deg);
+            transform: rotate(108deg);
+  }
+}
+
+@keyframes rotate-two {
+  0% {
+    -webkit-transform: rotate(54deg);
+            transform: rotate(54deg);
+  }
+  100% {
+    -webkit-transform: rotate(108deg);
+            transform: rotate(108deg);
+  }
+}
+
+@-webkit-keyframes rotate-three {
+  0% {
+    -webkit-transform: rotate(108deg);
+            transform: rotate(108deg);
+  }
+  100% {
+    -webkit-transform: rotate(153deg);
+            transform: rotate(153deg);
+  }
+}
+
+@keyframes rotate-three {
+  0% {
+    -webkit-transform: rotate(108deg);
+            transform: rotate(108deg);
+  }
+  100% {
+    -webkit-transform: rotate(153deg);
+            transform: rotate(153deg);
+  }
+}
+
+@-webkit-keyframes rotate-four {
+  0% {
+    -webkit-transform: rotate(153deg);
+            transform: rotate(153deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-four {
+  0% {
+    -webkit-transform: rotate(153deg);
+            transform: rotate(153deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */

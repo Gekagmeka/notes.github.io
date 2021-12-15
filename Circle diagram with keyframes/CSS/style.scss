@@ -1,0 +1,181 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+li {
+   list-style-type: none;
+}
+
+.container {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.chart-skills {
+   position: relative;
+   width: 350px;
+   height: 175px;
+
+   overflow: hidden;
+
+   &::before {
+      content: '';
+      position: absolute;
+      
+      width: calc(100% - 80px);
+      height: 100%;
+      border: 40px solid #dadada;
+      border-bottom: none;
+      border-top-left-radius: 175px;
+      border-top-right-radius: 175px;
+   }
+   .list-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 100%;
+      left: 0;
+      border: 40px solid rgb(128, 68, 68);
+      border-top: none;
+      border-bottom-left-radius: 175px;
+      border-bottom-right-radius: 175px;
+      transform-origin: 50% 0;
+
+      animation-fill-mode: forwards;
+      animation-duration: 0.3s;
+      animation-timing-function: linear;
+
+      &:nth-child(1) {
+         z-index: 4;
+         animation-name: rotate-one;
+         span {
+            top: 0;
+            left: 0;
+            transform: rotate(-54deg); 
+         }
+      }
+      &:nth-child(2) {
+         z-index: 3;
+         border-color: rgb(165, 187, 69); 
+         animation-name: rotate-two;
+         animation-delay: 0.3s;
+         span {
+            top: 0;
+            left: 0;
+            transform: rotate(-108deg);
+            animation-delay: 0.3s;
+         }
+      }
+      &:nth-child(3) {
+         z-index: 2;
+         border-color: rgb(56, 122, 78);
+         animation-name: rotate-three;
+         animation-delay: 0.6s;
+         span {
+            top: 0;
+            left: 0;
+            transform: rotate(-153deg);
+            animation-delay: 0.6s;
+         }
+      }
+      &:nth-child(4) {
+         z-index: 1;
+         border-color: rgb(50, 55, 122);
+         animation-name: rotate-four;
+         animation-delay: 0.9s;
+         span {
+            top: 0;
+            left: 0;
+            transform: rotate(-180deg);
+            animation-delay: 0.9s;
+         }
+      }
+   }
+   span {
+      position: absolute;
+      // backface-visibility: hidden;
+      opacity: 0;
+
+      animation: fade-in 1s linear forwards;
+
+      &:nth-child(1) {
+       top: 0;
+       left: 0;
+       transform: rotate(-54deg); 
+      }
+      &:nth-child(2) {
+         top: 0;
+         left: 0;
+         transform: rotate(-108deg); 
+      }
+      &:nth-child(3) {
+         top: 0;
+         left: 0;
+         transform: rotate(-153deg); 
+      }
+   }
+}
+
+@keyframes rotate-one {
+   100% {
+      transform: rotate(54deg); //CSS
+   }
+}
+
+@keyframes rotate-two {
+   0% {
+      transform: rotate(54deg); //CSS (начальная точка - єто конец предыдущей <li>)
+   }
+   100% {
+      transform: rotate(108deg); // HTML = CSS + 54 (HTML)
+   }
+}
+
+@keyframes rotate-three {
+   0% {
+      transform: rotate(108deg);
+   }
+   100% {
+      transform: rotate(153deg); // 54 + 54 + 45
+   }
+}
+
+@keyframes rotate-four {
+   0% {
+      transform: rotate(153deg);
+   }
+   100% {
+      transform: rotate(180deg); // 54 + 54 + 45 + 27
+   }
+}
+
+@keyframes fade-in {
+   0%{
+      opacity: 0;
+   }
+   90% {
+      opacity: 0.5;
+   }
+   100%{
+      opacity: 1;
+   }
+}
+
+// CSS - 30%
+// HTML - 30%
+// JS - 25%
+// PHP - 15%
+// Расчеты:
+// Так как у нас полукруг, то умножаем % на 180, а не на 360 (круговая диаграмма)
+// Получение градуса поворота:
+// CSS:   ( 30% / 100% ) * 180 = 54 градуса
+// HTML  ( 30% / 100% ) * 180 = 54 градуса
+// JS  ( 25% / 100% ) * 180 = 45 градуса
+// PHP  ( 15% / 100% ) * 180 = 27 градуса
+
+// далее анимация
+// animation-fill-mode: forwards;
+// animation-duration: .4s;
+// animation-timing-function: linear;
