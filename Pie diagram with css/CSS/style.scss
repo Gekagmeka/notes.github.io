@@ -1,0 +1,60 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+li {
+   list-style-type: none;
+}
+
+.container {
+   max-width: 800px;
+   margin: 0 auto;
+}
+
+.pie-chart {
+   width: 200px;
+   height: 200px;
+   // background: rgb(46, 182, 76);
+   background: rgb(46, 182, 76) linear-gradient(to right, transparent 50%, rgb(83, 83, 60) 50%);
+   border-radius: 50%;
+   overflow: hidden;
+
+   &::after {
+      content: '';
+      display: block;
+      background-color: inherit; // Не используйте background: inherit;, вместо backround-color: inherit;, так как в этом случае будет унаследован и градиент!
+      // мы потом в анимации (c 50% до 100%) и поменяем bgc на bg, чтоб унаследовать градиент
+      
+      // from 50% to 100% need change bgc to bg -> we will change it in animation
+      // background: #000;
+
+      width: 100%;
+      height: 100%;
+      margin-left: 50%;
+      transform-origin: 0 50%; // слева по оси ОХ, по центру относительно ОУ
+   
+      transform: rotate(40deg); // + background: rgb(83, 83, 60); и тогда можно отобразить диаграммуот 50% до 100%
+      background: rgb(83, 83, 60);
+
+      // animation: rotate-pie 3s linear infinite,
+      //           change-bg 6s step-end infinite;
+      // доходим до половины - а потом с 5с начинаем изменять заливку
+      // animation: change-bg 6s step-end infinite; // начинаем с 6 с, т.к. анимация rotate-pie заканчивается спустя 3 с
+   }
+   // теперь можно вращать
+   // 20% это = 72deg  т.е.( (20% / 100%) × 360 = 72 deg)
+}
+
+@keyframes rotate-pie {
+   to {
+      transform: rotate(180deg);
+   }
+}
+
+@keyframes change-bg {
+   50% {
+      background: rgb(83, 83, 60);
+   }
+}
