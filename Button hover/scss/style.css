@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: #88ec69;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  z-index: 2;
+  color: #000;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.button .text {
+  position: relative;
+  z-index: 3;
+}
+
+.button .buble {
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  z-index: 1;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  background-color: #3310d1;
+  border-radius: 80% 0 0 0;
+}
+
+.button:hover {
+  color: #fff;
+}
+
+.button:hover .buble {
+  -webkit-animation: motion 1.5s ease-in forwards;
+          animation: motion 1.5s ease-in forwards;
+}
+
+@-webkit-keyframes motion {
+  50% {
+    bottom: 0px;
+    left: -10px;
+  }
+  100% {
+    bottom: 0;
+    left: -20px;
+  }
+}
+
+@keyframes motion {
+  50% {
+    bottom: 0px;
+    left: -10px;
+  }
+  100% {
+    bottom: 0;
+    left: -20px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
