@@ -1,0 +1,127 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+input {
+  display: none;
+}
+
+#text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 10px;
+  display: block;
+  width: 100%;
+}
+
+.select {
+  position: relative;
+  width: 250px;
+  background-color: #f1f1f1;
+  height: 30px;
+  line-height: 26px;
+  display: inline-block;
+  /* Если ничего не выбрано, то наш изначальный текст черного цвета, как и должно быть */
+  /* Если же что-то выбрано, то наш текст становится невидимым и встает сверху выбранного параметра, чтобы при клике на него можно было заново открыть селект */
+  /* Стилизация выключенного селекта */
+  /* Стилизация блока с опциями. min-height сделана для фикса высоты при абсолютном позиционировании, overflow же сделан для фиксированной высоты */
+}
+
+.select::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #866868;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.select input[name="list"]:not(:checked) ~ #text {
+  color: #797979;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.select input[name="list"]:checked ~ #text {
+  background-color: transparent;
+  color: transparent;
+  z-index: 2;
+}
+
+.select #select {
+  /* Если наш селект закрыт, то он имеет высоту 30px(сделано для того, чтобы слишком большие надписи не растягивали его в высоту) */
+}
+
+.select #select:not(:checked) ~ .items {
+  height: 30px;
+}
+
+.select #select:checked {
+  /* Если наш селект открыт, то надо сделать все опции видимыми */
+}
+
+.select #select:checked ~ .items {
+  padding-top: 26px;
+}
+
+.select #select:checked ~ .items label {
+  display: block;
+}
+
+.select #select:checked ~ .bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  z-index: 0;
+}
+
+.select .items {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  cursor: pointer;
+  min-height: 30px;
+  /* Все лейбелы(названия опций) изначально скрыты */
+  /* Если какая-либо опция была выбрана, то сделать ее видимой(при выборе селект автоматически закроется) */
+}
+
+.select .items label {
+  display: none;
+  padding-left: 10px;
+  background-color: #fff;
+  border-top: 2px solid #000;
+}
+
+.select .items label:hover {
+  background-color: #d45656;
+  cursor: pointer;
+}
+
+.select .items input:checked + label {
+  display: block;
+  border: none;
+  background-color: #fff;
+}
+/*# sourceMappingURL=main.css.map */

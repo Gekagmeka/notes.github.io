@@ -1,0 +1,66 @@
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Custom select with radio buttons</title>
+      <link rel="stylesheet" href="scss/main.css">
+   </head>
+   <body>
+      
+      <div class="body-wrapper">
+   
+         <main class="main">
+
+            <div class="container">
+               <div class="content">
+                  <div class="sidebar">
+                     <form action="contact">
+                        <h3>
+                           Contact Us
+                        </h3>
+                        
+                        <div class="form-group">
+                            <!-- Лейбел, при клике на который открывается селект -->
+                           <label for="select" class="select">
+                              <!-- Этот инпут отвечает за закрытие селекта при клике за его пределами. Также этот инпут является стандартным значением нашего селекта -->
+                              <input type="radio" name="list" value="not_changed" id="bg" checked />
+                              <!-- Этот инпут является переключателем селекта в состояние "открыт" -->
+                              <input type="radio" name="list" value="not_changed" id="select">
+                              <!-- Этот лейбел используется для создания подложки, клик по которой приводит к закрытию селекта -->
+                              <label class="bg" for="bg"></label>
+
+                              <!-- Этот див - список параметров селекта, где #text - то, что выводится, когда ничего не выбрано -->
+                              <div class="items">
+                                  <!-- Инпут, при клике на который происходит выбор параметра и сворачивание селекта -->
+                                  <input type="radio" name="list" value="first_value" id="list[0]">
+                                  <!-- Название параметра -->
+                                  <label for="list[0]">First option</label>
+
+                                  <!-- Инпут, при клике на который происходит выбор параметра и сворачивание селекта[1] -->
+                                  <input type="radio" name="list" value="second_value" id="list[1]">
+                                  <!-- Инпут, при клике на который происходит выбор параметра и сворачивание селекта[1] -->
+                                  <label for="list[1]">Second option</label>
+
+                                  <!-- Инпут, при клике на который происходит выбор параметра и сворачивание селекта[1] -->
+                                  <input type="radio" name="list" value="third_value" id="list[2]">
+                                  <!-- Инпут, при клике на который происходит выбор параметра и сворачивание селекта[1] -->
+                                  <label for="list[2]">Third option</label>
+                                  
+                                  <!-- Текст селекта по умолчанию. Выводится тогда, когда ничего не выбрано -->
+                                  <span id="text">Select something...</span>
+                              </div>
+                           </label>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+
+         </main>
+
+      </div>
+      
+   </body>
+   </html>

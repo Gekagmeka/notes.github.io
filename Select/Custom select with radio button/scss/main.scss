@@ -1,0 +1,142 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.container {
+   width: 100%;
+   max-width: 1000px;
+   padding: 0 10px;
+   margin: 0 auto;
+}
+
+input {
+   display: none;
+}
+
+// позиционирование относительно .select
+#text {
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding-left: 10px;
+   display: block;
+   width: 100%;
+}
+
+.select {
+   position: relative;
+   width: 250px;
+   background-color: rgb(241, 241, 241);
+   height: 30px;
+   line-height: 26px;
+   display: inline-block;
+   &::after {
+      content: '';
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: rgb(134, 104, 104);
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      transition: all 0.2s ease-in;
+   }
+
+   /* Если ничего не выбрано, то наш изначальный текст черного цвета, как и должно быть */
+   input[name="list"]:not(:checked) {
+      & ~ #text {
+         color: rgb(121, 121, 121);
+         background-color: #fff;
+         font-weight: 700;
+      }
+   }
+
+   /* Если же что-то выбрано, то наш текст становится невидимым и встает сверху выбранного параметра, чтобы при клике на него можно было заново открыть селект */
+   input[name="list"]:checked {
+      & ~ #text {
+         background-color: transparent;
+         color: transparent;
+         z-index: 2;
+      }
+   }
+
+   /* Стилизация выключенного селекта */
+   #select {
+      // &:disabled {
+      //    & ~ .items {
+      //       #text {
+      //          background-color: rgb(31, 19, 19);
+      //       }
+      //    }
+      // }
+
+      /* Если наш селект закрыт, то он имеет высоту 30px(сделано для того, чтобы слишком большие надписи не растягивали его в высоту) */
+      &:not(:checked) {
+         & ~ .items {
+            height: 30px;
+         }
+      }
+      &:checked {
+         & ~ .items {
+            padding-top: 26px;
+         }
+
+         /* Если наш селект открыт, то надо сделать все опции видимыми */
+         & ~ .items {
+            label {
+               display: block;
+            }
+         }
+
+         & ~ .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            z-index: 0;
+         }
+      }
+   }
+
+   /* Стилизация блока с опциями. min-height сделана для фикса высоты при абсолютном позиционировании, overflow же сделан для фиксированной высоты */
+   .items {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border: 2px solid #000;
+      cursor: pointer;
+      min-height: 30px;
+      
+      /* Все лейбелы(названия опций) изначально скрыты */
+      label {
+         display: none;
+         padding-left: 10px;
+         background-color: #fff;
+         border-top: 2px solid #000;
+         &:hover {
+            background-color: rgb(212, 86, 86);
+            cursor: pointer;
+         }
+      }
+
+      /* Если какая-либо опция была выбрана, то сделать ее видимой(при выборе селект автоматически закроется) */
+      input {
+         &:checked {
+            & + label {
+               // display: block!important;
+               display: block;
+               border: none;
+               background-color: #fff;
+            }
+         }
+      }
+   }
+
+}
+
