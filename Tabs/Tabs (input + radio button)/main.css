@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tabs {
+  max-width: 800px;
+  text-align: center;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+  background-color: #49BDE2;
+}
+
+.tabs label {
+  background-color: #ccc;
+  display: inline-block;
+  width: 100px;
+  height: 5px;
+  margin: 0 3px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tabs .tabs-content {
+  display: none;
+  padding: 30px 15px;
+  margin: 30px 0;
+  border: 1px solid #ccc;
+}
+
+.tabs #tab-btn-1:checked ~ #content-1,
+.tabs #tab-btn-2:checked ~ #content-2,
+.tabs #tab-btn-3:checked ~ #content-3,
+.tabs #tab-btn-4:checked ~ #content-4 {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */
