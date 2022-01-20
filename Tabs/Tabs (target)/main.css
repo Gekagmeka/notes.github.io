@@ -1,0 +1,124 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body {
+  background-color: #332f33;
+  color: #cccccc;
+}
+
+.tabs {
+  margin-bottom: 40px;
+}
+
+.tabs .tabs-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tabs .tabs-items .tabs-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.tabs .tabs-items .tabs-item span {
+  position: relative;
+  z-index: 2;
+}
+
+.tabs .tabs-content {
+  position: relative;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 18px;
+  display: none;
+}
+
+.tabs .tabs-content:target {
+  display: block;
+}
+
+.tabs .tabs-content::before {
+  content: '';
+  height: 50px;
+  width: 25%;
+  position: absolute;
+  top: -50px;
+}
+
+.tabs .tabs-content:nth-child(1) {
+  background-color: #c87272;
+}
+
+.tabs .tabs-content:nth-child(1)::before {
+  content: '';
+  background-color: #c87272;
+  left: 0;
+}
+
+.tabs .tabs-content:nth-child(2) {
+  background-color: #815a5a;
+}
+
+.tabs .tabs-content:nth-child(2)::before {
+  content: '';
+  background-color: #815a5a;
+  left: 25%;
+}
+
+.tabs .tabs-content:nth-child(3) {
+  background-color: #473131;
+}
+
+.tabs .tabs-content:nth-child(3)::before {
+  content: '';
+  background-color: #473131;
+  left: 50%;
+}
+
+.tabs .tabs-content:nth-child(4) {
+  background-color: #3f1d1d;
+}
+
+.tabs .tabs-content:nth-child(4)::before {
+  content: '';
+  background-color: #3f1d1d;
+  left: 75%;
+}
+
+@media screen and (max-width: 480px) {
+  .tabs-item span {
+    display: block;
+    width: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 13px;
+    text-overflow: ellipsis;
+  }
+}
+/*# sourceMappingURL=main.css.map */
