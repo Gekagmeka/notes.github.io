@@ -1,0 +1,77 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.container {
+   max-width: 1000px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+// Popup styles
+.popup {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.8);
+   top: 0;
+   left: 0;
+   overflow-y: auto;
+   overflow-x: hidden; // for animation
+   // right: 0;
+   // bottom: 0;
+
+   // without animation (then just display: block;)
+   // display: none; 
+
+   // with animation
+   opacity: 0;
+   visibility: hidden;
+   transition: all 0.8s ease-in;
+
+   .popup-body {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+   }
+   .popup-content {
+      max-width: 600px;
+      background-color: #f9f9f9;
+      padding: 30px;
+      color: #000;
+      position: relative;
+      // transform: translate(0, -100%);
+      opacity: 0;
+      transition: all 0.8s ease-in;
+      // other animation
+      // уедет вверх на 100%, при єтом повернется на 45 град по оси ОХ в перспективе 600 пикс
+      transform: perspective(600px) translate(0, -100%) rotateX(45deg);
+      .close {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         font-size: 14px;
+         color: #000;
+         text-decoration: none;
+      }
+      .popup-title {
+         margin-bottom: 20px;
+         font-size: 30px;
+      }
+   }
+   // open window with :target
+   &:target {
+      opacity: 1;
+      visibility: visible;
+      .popup-content {
+         opacity: 1;
+         //other animation
+         transform: perspective(600px) translate(0, 0) rotateX(0deg);
+         // transform: translate(0, 0);
+      }
+   }
+}
