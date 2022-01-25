@@ -76,7 +76,8 @@ function popupOpen(currentPopup) {
 }
 
 // doUnlock = true - стоит или не стоит использовать блокирование скролла - єто нужно для того , что б открівать другой popup при нажатии на ссылку из первого
-function popupClose(popupActive, doUnlock = true) {
+function popupClose(popupActive, doUnlock) {
+   doUnlock = true;
    if (unlock) {
       popupActive.classList.remove('open');
       // body.classList.remove('locked');
@@ -106,7 +107,7 @@ function bodyLock() {
    body.style.paddingRight = lockPaddingValue;
    body.classList.add('locked');
 
-   // блочим нашу переменную пока происходят всякие манипуляции и потом , через некоторое время(указівали сначала) мы опять ей указываем значение true
+   // блочим нашу переменную пока происходят всякие манипуляции (закрытие и открытие окна) и потом , через некоторое время(указівали сначала) мы опять ей указываем значение true
    unlock = false;
    // во избежание двойного нажатия - пока закрывается окно мы можем нажать открыть и друг на друга накладутся события, поэтому ставим на паузу одно из них
    setTimeout(function(){
@@ -138,3 +139,101 @@ function bodyUnLock() {
       unlock = true;
    }, timeout);
 }
+
+
+// закрытие окна по клику на ESC на клавиатуре (e.which - устарело)
+document.addEventListener('keydown', function(e) {
+   if (e.code === 'Escape') {
+      const popupActive = document.querySelector('.popup.open');
+      popupClose(popupActive);
+   }
+});
+
+// Полифилы для работы скрипта в ИЕ 11
+(function() {
+
+   // проверяем поддержку
+   if (!Element.prototype.closest) {
+ 
+     // реализуем
+     Element.prototype.closest = function(css) {
+       var node = this;
+ 
+       while (node) {
+         if (node.matches(css)) return node;
+         else node = node.parentElement;
+       }
+       return null;
+     };
+   }
+ 
+ })();
+ (function(constructor) {
+   const p = constructor.prototype;
+   if (!p.matches) {
+     p.matches = p.matchesSelector ||
+     p.mozMatchesSelector ||
+     p.msMatchesSelector ||
+     p.oMatchesSelector ||
+     p.webkitMatchesSelector;
+   };
+ })(window.Element);
+
+
+
+
+// (function() {
+
+//    // проверяем поддержку
+//    if (!Element.prototype.matches) {
+//      // Полифилл для .matches
+//      // определяем свойство
+//      Element.prototype.matches = Element.prototype.matchesSelector ||
+//        Element.prototype.webkitMatchesSelector ||
+//        Element.prototype.mozMatchesSelector ||
+//        Element.prototype.msMatchesSelector;
+ 
+//    }
+//    // Полифилл для .closest
+//    // проверяем поддержку
+//    if (!Element.prototype.closest) {
+ 
+//      // реализуем
+//      Element.prototype.closest = function(css) {
+//        var node = this;
+ 
+//        while (node) {
+//          if (node.matches(css)) return node;
+//          else node = node.parentElement;
+//        }
+//        return null;
+//      };
+//    }
+ 
+
+
+
+
+// })();
+// (function() {
+//    if (!Element.prototype.closest) {
+//       Element.prototype.closest = function(css) {
+//          var node = this;
+//          while(node) {
+//             if (node.matches(css)) return node;
+//             else node = node.parentElement;
+//          }
+//          return null;
+//       };
+//    };
+//  })();
+
+// (function() {
+//    if (!Element.prototype.matches) {
+//       Element.prototype.matches = Element.prototype.matchesSelector ||
+//       Element.prototype.mozMatchesSelector ||
+//       Element.prototype.msMatchesSelector ||
+//       Element.prototype.oMatchesSelector ||
+//       Element.prototype.webkitMatchesSelector;
+//    };
+//  })();
