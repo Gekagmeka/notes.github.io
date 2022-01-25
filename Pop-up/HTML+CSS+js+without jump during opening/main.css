@@ -5,10 +5,32 @@
           box-sizing: border-box;
 }
 
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
 .container {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+}
+
+#content-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#content-3 h2 {
+  -webkit-box-flex: 50%;
+      -ms-flex: 50%;
+          flex: 50%;
+}
+
+#content-3 .image-link {
+  display: block;
 }
 
 body.locked {
