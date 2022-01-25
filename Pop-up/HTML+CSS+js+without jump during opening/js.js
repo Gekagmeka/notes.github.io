@@ -117,11 +117,16 @@ function bodyLock() {
 function bodyUnLock() {
    //чтоб не было рывка - а окно закрылось и потом появился скрол, если не будет задержки, то при закрытии мод окна, он сразу дергнется влево, т..к. появиться скрол
    // а так через 800 появиться скрол - т.е. когда уже мод окно закрется
+   // через 800 милисек мы убираем паддинги у body and el - сделано для того, чтоб не сразу появлялся скрол после закрытия мод окна, а через время
+   // иначе будет дергаться само мод окно при закрытии его
    setTimeout(function() {
-      for (let index = 0; index < lockPadding.length; index++) {
-         const el = lockPadding[index];
-         // меняем 17 пикс на 0 правый паддинг
-         el.style.paddingRight = '0px';
+      // проверяем , есть ли вообще такие элементы
+      if (lockPadding.length > 0) {
+         for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            // меняем 17 пикс на 0 правый паддинг
+            el.style.paddingRight = '0px';
+         }
       }
       body.style.paddingRight = '0px';
       body.classList.remove('locked');
