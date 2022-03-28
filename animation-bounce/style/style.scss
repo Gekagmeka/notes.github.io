@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.points {
+    display: inline-flex;
+    .dot {
+        width: 20px;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 50%;
+        margin: 0 10px;
+        animation: jumping infinite 1.5s ease-in-out;
+    }
+}
+
+@keyframes jumping {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(0, -40px);
+        height: 30px;
+    }
+    50% {
+        transform: translate(0, 20px);
+        height: 15px;
+    }
+    75% {
+        height: 20px;
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
