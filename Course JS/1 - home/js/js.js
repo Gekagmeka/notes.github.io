@@ -47,9 +47,9 @@
 //    console.log(str1.indexOf('is')); //6
 //    console.log(str1.indexOf('e')); //2
 //    console.log(str1.lastIndexOf('e')); //17 - the last entering
-//    console.log(str1.substr(5, 2)); // _i (5 - from what index, 2 - how much symvols)
-//    console.log(str1.substring(5, 10)); //_is_a_ (10 - to what index , do not including it)
-//    console.log(str1.slice(5, 10)); //_is_a_ (10 - to what index , do not including it)
+//    console.log(str1.substr(5, 2)); // _i (5 - from what index, 2 - how much symbols)
+//    console.log(str1.substring(5, 10)); //_is_a (10 - to what index , do not including it)
+//    console.log(str1.slice(5, 10)); //_is_a (10 - to what index , do not including it)
 //    console.log(str1.slice(5, -1)); //_is_a_str_on (we can cut from the end of the row)
 //    console.log(str1 + str2); //There is a str oneThere is the second str
 //    console.log(str1.charCodeAt(0)); //84
@@ -57,7 +57,7 @@
 //    console.log('ab' > 'aa'); //true
 //    console.log("2" < '11'); //false - need use ASCII table 2=50 and 1 = 49
 //    console.log("23" > '231'); //false
-//    console.log(2 > '11'); //false - munbers and string are compared like munbers
+//    console.log(2 > '11'); //false - munbers and string are compared like numbers
 //    console.log(someValue.toString()); // number is converted into string '2020'
 //    console.log(someValue + ''); // to add empty string to number = string result
 
@@ -67,19 +67,28 @@
 //----------------------------
 // let string = 'some test string';
 
-// //1) the first and the last word of the row
+// //1) the first and the last letter of the row
+// console.log(`${string[0] + ' and ' + string[string.length - 1]}`);
 // console.log(string[0], string[string.length -1]); //s g
-// //2) the first and the last word - need to be done Uppercase
+// //2) the first and the last letter - need to be done Uppercase
+// console.log(`${string[0] + string[string.length - 1]}`.toUpperCase());
 // console.log(string[0].toUpperCase(), string[string.length -1].toUpperCase()); // S G
 // //3) find placement of the string 'string'
+// console.log(string.indexOf('string'));
 // console.log(string.indexOf('string')); //10
 // //4) find placement of the second space
+// console.log(string.indexOf(' ', 5));
 // console.log(string.indexOf(' ', 5)); //9
 // //5) to get string from the 5th word (length 4 words)
+// console.log(string.substring(5, 9));
+// console.log(string.substr(5, 4));
+// console.log(string.slice(5, -7));
 // console.log(string.substr(5, 4)); // test
 // //6) to get string from the 5th to 9th words
+// console.log(string.substring(5,9));
 // console.log(string.substring(5, 9)); //test
 // //7) to get srting without 6 symbols at the end
+// console.log(string.slice(0, -6));
 // console.log(string.slice(0, -6)); //some_test_
 // //8) to get string from summ of numbers 20 and 16
 // let a = 20;
@@ -88,6 +97,148 @@
 // b = b.toString();
 // let c = a + b;
 // console.log(c); //2016
+
+// // 9) Задача. Дана строка 'aaa@bbb@ccc'. Замените все @ на '!' с помощью глобального поиска и замены.
+// with methos .replace() and global search /str/g
+// let str = 'aaa@bbb@ccc';
+// str = str.replace('@', '!'); // only the first coincidence aaa!bbb@ccc
+// str = str.replace( /@/g, '!'); // global search aaa!bbb!ccc
+// console.log(str);
+
+// // 10) Задача. Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb' тремя разными способами
+// let str = 'aaa bbb ccc';
+// console.log(str.substr(4, 3));
+// console.log(str.substring(4, 7));
+// console.log(str.slice(4, -4)); // or (4, 7)
+
+// // 11) Задача. В переменной date лежит дата в формате '2025-12-31'. Преобразуйте эту дату в формат '31/12/2025'
+// method .split() -> to make string into the array
+// method .join() -> to make array into str
+// method .reverse() -> to reverse elements of array
+// *Test
+// let date = '31/12/2025';
+// // date = date.replace(/\//g, '-');
+// // console.log(date, typeof date);
+
+// let arr = date.split('/');
+// console.log(arr);
+// arr = arr.reverse();
+// arr = arr.join('-');
+// OR
+// arr = arr.reverse().join('-');
+// console.log(arr, typeof arr);
+// OR
+// let newStr = arr[2] + '-' + arr[1] + '-' + arr[0];
+// console.log(newStr, typeof newStr);
+
+// // 12) Дана строка 'я учу javascript!'. Найдите позицию подстроки 'учу'.
+// let str = 'я учу javascript!';
+// console.log(str.indexOf('учу'));
+
+// // 13) Дана переменная str, в которой хранится какой-либо текст. Реализуйте обрезание длинного текста по следующему принципу: если количество символов этого текста больше заданного в переменной n, то в переменную result запишем первые n символов строки str и добавим в конец троеточие '...'. В противном случае в переменную result запишем содержимое переменной str.
+// let n = prompt('Enter the number', 0);
+// let str = 'some text is here';
+// let result = '';
+// console.log(str.length);
+// if ( str.length > n ) {
+//     for ( let i = 0; i <= n; i++) {
+//         result = result + str[i];
+//     }
+//     result = result + '...';
+// } else {
+//     result = result + str;
+// }
+// console.log(result, typeof result);
+
+// // 14) Дана строка 'Я-учу-javascript!'. Замените все дефисы на '!' с помощью глобального поиска и замены
+// let str = 'Я-учу-javascript!';
+// console.log(str);
+// str = str.replace(/-/g, '!');
+// console.log(str);
+
+// // 15) Дана строка 'я учу javascript!'. С помощью метода split запишите каждое слово этой строки в отдельный элемент массива.
+// let str = 'я учу javascript!';
+// str = str.split(' ');
+// console.log(str);
+
+// // 16)  Дана строка 'я учу javascript!'. С помощью метода split запишите каждый символ этой строки в отдельный элемент массива.
+// str = str.split('');
+// console.log(str);
+
+// // 17) В переменной date лежит дата в формате '2025-12-31'. Преобразуйте эту дату в формат '31.12.2025'.
+// let date = '2025-12-31';
+// date = date.split('-').reverse();
+// // let res = date[0] + '.' + date[1] + '.' + date[2];
+// // OR
+// date = date.join('.');
+// console.log(date);
+
+// // 18) Дан массив ['я', 'учу', 'javascript', '!']. С помощью метода join преобразуйте массив в строку 'я+учу+javascript+!'.
+// let arr = ['я', 'учу', 'javascript', '!'];
+// arr = arr.join('+');
+// console.log(arr);
+
+// // 19) Преобразуйте первую букву строки в верхний регистр.
+// let str = 'some string';
+// str = str.replace(str[0], 'S');
+// console.log(str);
+
+ // // 21) Преобразуйте первую букву каждого слова строки в верхний регистр.
+// let str = 'some string text';
+// str = str.split(' ');
+// for (let i = 0; i < str.length; i++) {
+//     // str = str.slice(1);
+//     // str[i] = str[i].slice(1);
+//     str[i] = str[i].replace(str[i][0], str[i][0].toUpperCase());
+//     console.log(str[i]);
+// }
+// str = str.join(' ');
+// console.log(str);
+// // OR
+// for (let i = 0; i < str.length; i++) {
+//     // str = str.slice(1);
+//     // str[i] = str[i].slice(1);
+//     str[i] = str[i][0].toUpperCase() + str[i].slice(1);
+//     console.log(str[i]);
+// }
+// str = str.join(' ');
+// console.log(str);
+
+ // // 20) Преобразуйте строку 'var_test_text' в 'varTestText'. Скрипт, конечно же, должен работать с любыми аналогичными строками.
+//  let str = 'var_test_text';
+// str = str.split('_');
+//  console.log(str);
+//  for (let i = 0; i < str.length; i++) {
+//     str[i] = str[i][0].toUpperCase() + str[i].slice(1);
+//     // console.log(str[i]);
+//  }
+//  str = str.join('');
+//  let newStr = str[0].toLowerCase() + str.slice(1);
+//  console.log(newStr);
+// // OR
+// let newStr = '';
+// let i = 0;
+// while( i < str.length ) {
+//    if( str[i] === '_' ) {
+//       newStr = newStr + str[i + 1].toUpperCase();
+//       i += 2;
+//    } else {
+//       newStr = newStr + str[i];
+//       i++;
+//    }
+// }
+// console.log(newStr);
+// // OR
+// let newStr = '';
+// for (let i = 0; i < str.length; i++) {
+//     if ( str[i] === '_' ) {
+//         newStr = newStr + str[i + 1].toUpperCase();
+//         i++;
+//     } else {
+//         newStr = newStr + str[i];
+//     }
+// }
+// console.log(newStr);
 
 
 
@@ -124,6 +275,102 @@
 //5) to get number from the string '100$'
 //let $ = '100$';
 //console.log(parseInt($)); //100 - is number now
+
+// 6)  Даны переменные a = 10 и b = 3. Найдите остаток от деления a на b. Показать решение.
+// let a = 10;
+// let b = 5;
+// console.log(a % b);
+
+ // 7) Даны переменные a и b. Проверьте, что a делится без остатка на b. Если это так - выведите 'Делится' и результат деления, иначе выведите 'Делится с остатком' и остаток от деления.
+// if ( a % b === 0 ) {
+//    console.log('yes');
+// } else {
+//    console.log('no');
+// }
+
+// 8)  Найдите квадратный корень из 379. Результат округлите до целых, до десятых, до сотых
+// let num = 379;
+// console.log((Math.sqrt(num)).toFixed(), typeof((Math.sqrt(num)).toFixed()));
+// console.log(Math.round(Math.sqrt(num)), typeof(Math.round(Math.sqrt(num))));
+
+// // 9)  Выведите на экран случайное целое число от 1 до 100.
+// let a = Math.floor(Math.random() * (100 - 1) + 1);
+// console.log(a);
+
+// // 10) Заполните массив 10-ю случайными целыми числами. (Подсказка: нужно воспользоваться циклами for или while)
+// let arr = [];
+// let a;
+// for (let i = 0; i < 10; i++) {
+//    a = Math.round(Math.random() * 10);
+//    // arr = arr + i;
+//    arr[i] = a;
+//    // console.log(a, typeof a);
+// }
+// // console.log(a);
+// console.log(arr, typeof arr);
+
+// // 11) Даны числа 4, -2, 5, 19, -130, 0, 10. Найдите минимальное и максимальное число
+// console.log(Math.max(4, -2, 5, 19, -130, 0, 10));
+// console.log(Math.min(4, -2, 5, 19, -130, 0, 10));
+
+// // 12) Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
+// let arr = [12, 15, 20, 25, 59, 79];
+// console.log(arr);
+// let res = 0;
+// let n = 0;
+// for ( let i = 0; i < arr.length; i++) {
+//    res = res + arr[i];
+//    n++;
+// }
+// res = res / n;
+// console.log(res, typeof res); // 35 (all right)
+
+ // // 13) Напишите скрипт, который будет находить факториал числа. Факториал (обозначается !) - это произведение (умножение) всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4.
+// let a = 4;
+// let res = 1;
+// for ( let i = 1; i <= a; i++ ) {
+//    // console.log(i);
+//    res = res * i;
+// }
+// console.log(res);
+
+// let num1 = 3;
+// let num2 = --num1;
+// console.log(num1);
+// console.log(num2);
+
+// let num1 = 3;
+// let num2 = num1--;
+// console.log(num1);
+// console.log(num2);
+
+// let num1 = 3; // 1-3
+// num1++; // 1-4
+// let num2 = num1--; // 2-4 1-4
+// console.log(num1++); // 1-3
+// console.log(--num2); // 2-3
+
+// let num1 = 3;
+// num1++;
+// let num2 = num1--;
+// console.log(num1++); // 3
+// console.log(--num2); // 3
+// console.log(num2); // 3
+// console.log(num1); // 4
+
+// let num1 = 3;
+// num1++;
+// let num2 = --num1; // 2-3 1-3
+// console.log(num1++); // 3
+// console.log(--num2); // 2
+// console.log(num2); // 2
+// console.log(num1); // 4
+
+// // 14) С помощью функции prompt спросите у пользователя сторону квадрата. Выведите на экран площадь введенного квадрата
+// let question = +prompt('Enter number', 0);
+// let res = question * question;
+// console.log(`square with side a = ${question} cm is equal to ${res} cm^2`);
+
 
 
 //--------------------------
@@ -236,3 +483,99 @@
 
 // let n = 0;
 // console.log(n ?? 'without name'); // 0, because it is defined
+
+
+
+
+//--------------------------
+// document.write('<b>some text</b>');
+// // 1) Выведите в окно браузера столбец чисел от 1 до 5.
+// let i;
+// for (i = 1; i <= 5; i++) {
+//    // console.log(i);
+//    document.write(`${i}<br />`);
+// }
+
+// // 2) Пусть дана переменная a со стороной квадрата. Найдите площадь квадрата и запишите ее в переменную s. Выведите содержимое этой переменной на экран.
+// let a = '10 см';
+// a = parseInt(a);
+// let s = Math.pow(a, 2);
+// document.write(s);
+
+
+
+// --------------------------
+// ПРоверка ошибок
+// // // 1)
+// let num1 = 1;
+// let num2 = 2;
+// console.log(`сумма: ${num1 + num2}`);
+
+// // // 2) Код должен находить сумму чисел:
+// let a = 1;
+// let b = 2;
+// console.log(a + b);
+
+// // 3) Код должен находить сумму цифр числа:
+// let num = '123';
+// let sum = parseInt(num[0]) + parseInt(num[1]) + parseFloat(num[2]);
+// console.log(sum, typeof sum);
+
+// // 4) Код должен вывести первую цифру числа
+// let num = 123;
+// num = num.toString();
+// console.log(num[0]);
+
+// // 5) Код должен был вывести в консоль число 1, но выводит 0:
+// let a = 0;
+// console.log(++a);
+
+// // 6) Код должен вывести количество цифр в числе:
+// let num = 123;
+// num = num + '';
+// console.log(num.length);
+
+// // 7) Код должен найти количество секунд в сутках:
+// let a = 24 * 60 * 60;
+// console.log(a);
+
+// // 8) Код должен вывести количество цифр в числе:
+// let num = 123;
+// let str = String(num);
+// console.log(str.length);
+
+// // 9) Код должен вывести последнюю цифру числа:
+// let num = 123;
+// let str = String(num);
+// console.log(str[str.length - 1]);
+
+// // 10) Код должен вывести количество цифр в числе:
+// let num = 123;
+// let str = String(num);
+// console.log(str.length);
+
+// // 11) Код должен вывести последнюю цифру числа:
+// let num = 123;
+// let str = String(num);
+// console.log(str[str.length - 1]);
+
+// // 12) Код должен найти сумму чисел:
+// let a = '123';
+// let b = '456';
+// let s = Number(a) + Number(b);
+// console.log(s);
+
+// // 13) Код должен найти сумму чисел:
+// let aaa = 1;
+// let bbb = 2;
+// let ccc = 3;
+// console.log(aaa + bbb + ccc);
+
+
+// // 16) Найдите количество секунд в 30 сутках.
+// let sec = 1;
+// let min = 60 * sec;
+// let hour = 60 * min;
+// let day = 24 * hour;
+// let day_30 = 30 * day;
+// console.log(day_30);

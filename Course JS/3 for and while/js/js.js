@@ -337,24 +337,34 @@ let counter = 0;
 //   console.log(i); // 2, 3, 5, 7
 // }
 // OR 2 variant
-for ( i = 1; i <= n; i++) {
-   // console.log(`i = ` + i);
+// for ( i = 1; i <= n; i++) {
+//    // console.log(`i = ` + i);
 
-   for ( j = 1; j <= i; j++) {
-      // console.log(`j = ` + j);
+//    for ( j = 1; j <= i; j++) {
+//       // console.log(`j = ` + j);
    
+//       if ( i % j === 0 ) {
+//          counter = counter + 1;
+//       }
+//    }
+
+//    if ( counter <= 2 ) {
+//       console.log(i);
+//       // console.log('counter = ' + counter);
+//    }
+
+//    counter = 0;
+// }
+// OR 3 variant
+for ( i = 1; i <= n; i++) {
+
+   for ( j = 2; j <= i; j++) {
+      
       if ( i % j === 0 ) {
-         counter = counter + 1;
+         break;
       }
-   }
-
-   if ( counter <= 2 ) {
       console.log(i);
-      // console.log('counter = ' + counter);
    }
-
-   counter = 0;
-
 }
 
 
