@@ -1,0 +1,1 @@
+bgc that consists of the 2 elements (::before and after) that fit only 50% of the width - for this reason one of them has greater z-index then square and in hides square under itself
