@@ -156,4 +156,29 @@ ul, li {
   border-radius: 4px 0 0 4px;
   background-color: #97e6f4;
 }
+
+.decor_st_4 {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  overflow: hidden;
+}
+
+.decor_st_4 .st_4 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 200px;
+  padding: 10px;
+  background-color: #65c558;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  top: 30px;
+  right: -50px;
+}
 /*# sourceMappingURL=style.css.map */

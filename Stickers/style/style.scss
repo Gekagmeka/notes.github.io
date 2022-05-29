@@ -145,3 +145,26 @@ ul, li {
         background-color: rgb(151, 230, 244);
     }
 }
+
+
+.decor_st_4 {
+    // to hide corners on the st_4 (triangles)
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 20px);
+    height: calc(100% + 20px);
+    overflow: hidden;
+
+    .st_4 {
+        display: flex;
+        justify-content: center;
+        width: 200px;
+        padding: 10px;
+        background-color: rgb(101, 197, 88);
+        // transform-origin: 0 0;
+        transform: rotate(45deg);
+        top: 30px;
+        right: -50px;
+    }
+}
