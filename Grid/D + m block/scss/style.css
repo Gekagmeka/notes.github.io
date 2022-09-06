@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+.container {
+  max-width: 1230px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: minmax(400px, 1fr) 1fr;
+      grid-template-columns: minmax(400px, 1fr) 1fr;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  row-gap: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  grid-auto-rows: minmax(30px, auto);
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.image-block {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 5;
+  grid-row: 1 / 6;
+}
+
+@media screen and (max-width: 768px) {
+  .image-block {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+}
+
+.title {
+  font-size: 48px;
+  line-height: 1;
+  font-family: sans-serif;
+  text-align: center;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    -ms-grid-row: 1;
+    grid-row: 1;
+  }
+}
+
+.text {
+  font-size: 20px;
+  line-height: 1;
+  font-family: sans-serif;
+  text-align: center;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+}
+
+.button-block {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / 5;
+}
+
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px 70px;
+  border-radius: 60px;
+  background-color: #062974;
+  color: #fff;
+  font-size: 32px;
+  line-height: 1;
+  font-weight: 700;
+  font-family: sans-serif;
+  -webkit-transition: background-color 0.3s ease-in;
+  transition: background-color 0.3s ease-in;
+}
+
+.button:hover {
+  background-color: #0d4497;
+}
+/*# sourceMappingURL=style.css.map */

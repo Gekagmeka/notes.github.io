@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+ 
+ body {
+    background-color: rgb(211, 216, 219);
+ }
+ 
+ .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+ }
+ 
+ .content {
+    padding: 40px 0;
+ }
+ 
+ // ===== Toggle Buttons =====
+
+// Button wrapper
+.t-toggle-button {
+   display: flex;
+   max-width: 600px;
+   width: 100%;
+   border: 2px solid #000;
+   border-radius: 50px;
+   height: 50px;
+   position: relative;
+ }
+ 
+ // Individual option in toggle button
+ .t-toggle-button__option {
+   display: flex;
+   align-items: center;
+   font: inherit;
+   font-weight: 700;
+   color: #a59eb5;
+   text-decoration: none;
+   text-align: center;
+   cursor: pointer;
+   width: 33.3333%;
+   height: 50px;
+   // border-radius: 50px;
+   overflow: hidden;
+   position: absolute;
+   top: -2px;
+   
+   // margin: -2px 0;
+   // border-radius: 24x;
+   // border: 2px solid #716894;
+ 
+   &:hover {
+      .custom-input {
+
+         & + .custom-text {
+            background-color: #cf1150;
+            border-radius: 50px;
+          }
+      }
+   }
+
+   &:first-child {
+      width: calc( 33.3333% + 2px );
+      left: -2px;
+   }
+
+   &:nth-child(2) {
+      left: 33.3333%;
+   }
+
+   &:last-child {
+      width: calc( 33.3333% + 2px);
+      left: 66.6666%;
+   }
+
+   span {
+     font-size: 14px;
+   }
+ 
+   // When checked the button is filled dark purple
+   .custom-text {
+      // padding: 15px 20px;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease-in;
+   }
+
+   .custom-input {
+
+      &:checked + .custom-text {
+         background-color: #cf1150;
+         border: 2px solid #716894;
+         border-radius: 50px;
+         color: #ffffff;
+       }
+   }
+ 
+   // Hide the radio button
+   input {
+      display: none;
+   //   position: absolute;
+   //   opacity: 0;
+   //   z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+   }
+ 
+ }
+ 

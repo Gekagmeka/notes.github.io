@@ -1,0 +1,86 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+img {
+   max-width: 100%;
+   display: block;
+   height: auto;
+}
+
+.container {
+   max-width: 1230px;
+   padding: 0 15px;
+   width: 100%;
+   margin: 0 auto;
+   background-color: rgb(92, 91, 91);
+}
+
+.content {
+   display: grid;
+   // grid-template-columns: repeat(2, 100px);
+   // grid-template-rows: 100px 100px;
+
+
+   // направление колоночное или строчное (по умолчанию)
+   // grid-auto-flow: column;
+
+
+   // описание структуры неявной сетки (той, которая мб создана, если  будет больше колонок и строк, чем описано в явной структуре)
+   // описана структура на 3 строки - а у нас будет 4 строки - так вот для этой 4 строки и будет описана неявная структура
+   // grid-auto-rows: 200px;
+   //Для работы с колонками нужно сначала поменять направление на колоночное
+   // grid-auto-flow: column;
+   // grid-auto-columns: ;
+
+
+   // justify-content: center;
+   // grid-template-columns: 33.3333% 33.3333% auto;
+
+   //Минимальная высота строки 600px, максимальная - auto (по контенту)
+   // grid-auto-rows: minmax(100px, auto);
+}
+
+// auto-fill, auto-fit
+   // Если колонки по ширине помещаются, то поместить, если нет - то перенести на др строку, типа flex-wrap: wrap;
+   // Не заполняет все своб пространство - старается вместить все элементы + вкл перенос, если не влазит
+   .auto-fill {
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+   }
+   // Вмешает все элементы , но заполняет все своб пространство + вкл перенос, если не влазит
+   .auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+   }
+
+.column {
+   font-size: 40px;
+}
+
+// .box-1 разместить на всю ширину (заполняем ширину и высоту блока от линии до линии с помощью grid-column-start, grid-column-end, grid-row-start и grid-row-end )
+// .box-1 занимает ширину от 1 линии до 4 - т е до конца строки, т к мы разбили все на 3 колонки
+// а ширину занимает от 1 строки до 3 - поэтому изначальная мин высота строки удваивается (по факту 2 строки занимает)
+.box-1 {
+   background-color: rgb(231, 124, 124);
+}
+
+.box-2 {
+   background-color: rgb(243, 253, 146);
+}
+
+.box-3 {
+   background-color: rgb(121, 240, 106);
+}
+
+.box-4 {
+   background-color: rgb(61, 197, 231);
+}
+
+.box-5 {
+   background-color: rgb(33, 30, 223);
+}
+
+.box-6 {
+   background-color: rgb(233, 49, 193);
+}

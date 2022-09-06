@@ -1,0 +1,77 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ }
+ 
+ body {
+    background-color: rgb(211, 216, 219);
+ }
+ 
+ .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+ }
+ 
+ .content {
+    padding: 40px 0;
+ }
+ 
+ // ===== Toggle Buttons =====
+
+// Button wrapper
+.t-toggle-button {
+   display: flex;
+   max-width: 600px;
+   width: 100%;
+   border: 2px solid #000;
+   border-radius: 24px;
+ }
+ 
+ // Individual option in toggle button
+ .t-toggle-button__option {
+   display: flex;
+   align-items: center;
+   font: inherit;
+   font-weight: 700;
+   color: #a59eb5;
+   text-decoration: none;
+   text-align: center;
+   cursor: pointer;
+   overflow: hidden;
+   // margin: -2px 0;
+   // border-radius: 24x;
+   width: 33.3333%;
+   // border: 2px solid #716894;
+ 
+   span {
+     font-size: 14px;
+   }
+ 
+   // When checked the button is filled dark purple
+   .custom-text {
+      padding: 15px 20px;
+      width: 100%;
+   }
+
+   .custom-input {
+
+      &:checked + .custom-text {
+         background-color: #cf1150;
+         border: 2px solid #716894;
+         border-radius: 24px;
+         color: #ffffff;
+       }
+   }
+ 
+   // Hide the radio button
+   input {
+      display: none;
+   //   position: absolute;
+   //   opacity: 0;
+   //   z-index: -1; /* Put the input behind the label so it doesn't overlay text */
+   }
+ 
+ }
+ 
