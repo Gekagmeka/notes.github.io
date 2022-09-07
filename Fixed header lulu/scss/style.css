@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 0 16px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main .first-section {
+  height: 1000px;
+  background-color: #ccc;
+}
+
+.main .second-section {
+  height: 1000px;
+  background-color: #835e5e;
+}
+
+#header {
+  -webkit-transition: background 0.3s ease-in-out,-webkit-box-shadow 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out,-webkit-box-shadow 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out,box-shadow 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out,box-shadow 0.3s ease-in-out,-webkit-box-shadow 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 70;
+  padding: 0;
+  background-color: #fff;
+}
+
+#header .desktop-logo {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #header .desktop-logo {
+    display: block;
+  }
+}
+
+#header .mobile-logo {
+  width: 32px;
+}
+
+@media screen and (min-width: 1200px) {
+  #header .mobile-logo {
+    display: none;
+  }
+}
+
+#header .logo {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+
+@media screen and (max-width: 1200px) {
+  #header .logo {
+    width: 100%;
+  }
+}
+
+#header .burger {
+  position: relative;
+  display: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 4;
+}
+
+@media screen and (max-width: 1200px) {
+  #header .burger {
+    display: block;
+    background-color: #ccc;
+  }
+}
+
+.nav {
+  width: 100%;
+  max-width: 700px;
+  margin-right: 100px;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    max-width: 285px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 132px 0 32px 0;
+    margin: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 5px 0px 10px #00284b;
+            box-shadow: 5px 0px 10px #00284b;
+    -webkit-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .nav.open {
+    left: 0;
+  }
+}
+
+.nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 1200px) {
+  .nav .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.container {
+  padding: 20px 32px;
+}
+
+.container .action-holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1200px) {
+  .container .action-holder {
+    display: none;
+  }
+}
+
+.container.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container.content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 2;
+  -webkit-transition: background .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+  transition: background .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+  transition: background .3s ease-in-out, box-shadow .3s ease-in-out;
+  transition: background .3s ease-in-out, box-shadow .3s ease-in-out, -webkit-box-shadow .3s ease-in-out;
+}
+/*# sourceMappingURL=style.css.map */

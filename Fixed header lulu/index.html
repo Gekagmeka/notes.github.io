@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Header fixed</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="scss/style.css" />
+</head>
+<body>
+	<div class="wrapper">
+    <header id="header" class="resources newFeatures">
+      <div class="container content">
+
+        <div class="logo">
+          <a href="https://www.sodapdf.com/" aria-label="Soda PDF Anywhere">
+            <i class="icon desktop-logo">
+              Logo desktop
+            </i>
+            <i class="icon mobile-logo">
+              Logo mob
+            </i>
+          </a>
+          <button id="burger" class="burger">
+            <span>menu</span>
+          </button>
+        </div>
+
+        <nav class="nav">
+          <ul class="menu">
+            <li class="item">
+              <a class="link" href="https://www.sodapdf.com/features/" itemprop="url">
+                Features
+              </a>
+            </li>
+            <li class="item">
+              <a id="pricingHeader" class="link" onclick="addParams()" onmousedown="jTracking.trackEvent({customEvent: 'goal', category: 'goal', action: 'buy-cta', label: 'header'});" js-visitor-tracking="buy" href="https://www.sodapdf.com/pricing/?uid=1015225&amp;cmp=spdf_all_direct_all_all_all_all&amp;key1=default&amp;key2=default&amp;mkey5=free&amp;mkey7=direct&amp;mkey6=42759513-b9ca-311c-6862-58e4eca0011b_2022-09-06&amp;mkey9=homesite&amp;wid=1400&amp;mkey1=sodapdf.com&amp;qti=42759513-b9ca-311c-6862-58e4eca0011b_2022-09-06&amp;gtm=GTM-TS85DT8&amp;mkey4=a3f82d60-4fa0-4f62-a55b-9d50e07803f7&amp;visitorid=a3f82d60-4fa0-4f62-a55b-9d50e07803f7&amp;culture=en" itemprop="url" data-jtracking-outbound="uid, cmp, key1, key2, mkey5, mkey7, mkey6, mkey9, wid, mkey1, mkey2, qti, gtm, mkey4, visitorid, culture">
+                Pricing
+              </a>
+            </li>
+            <li class="item drop" onclick="slideToggleHeader(this)">
+                <div class="opener" onclick="openOnline(this)" href="https://www.sodapdf.com/business/">
+                  Business
+                </div>
+            </li>
+            <li class="item drop" onclick="slideToggleHeader(this)">
+              <div class="opener" onclick="openOnline(this)" href="https://online.sodapdf.com/?lang=en&amp;qti=42759513-b9ca-311c-6862-58e4eca0011b_2022-09-06&amp;mkey6=42759513-b9ca-311c-6862-58e4eca0011b_2022-09-06&amp;uid=1015225&amp;cmp=spdf_all_direct_all_all_all_all&amp;key1=default&amp;key2=default&amp;mkey5=free&amp;mkey7=direct&amp;mkey9=homesite&amp;wid=1400&amp;mkey1=sodapdf.com">
+                Online Tools
+              </div>
+            </li>
+            <li class="item">
+              <a class="link" target="_blank" rel="noreferrer" href="https://www.sodapdf.com/support/" itemprop="url">
+                Support
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="action-holder desktop">
+
+          <a target="_blank" rel="noopener noreferrer" data-jtracking-outbound="mkey1" js-visitor-tracking="download" href="https://www.sodapdf.com/installation-guide/?mkey1=sodapdf.com" itemprop="url" class="main-btn free-trial-btn" onmousedown="jTracking.trackEvent({customEvent:'goal',category:'goal',action:'app-downloaded',label:'sodapdf.com'});jTracking.trackEvent({customEvent:'optimization',category:'page',action:'try-header',label:'sodapdf.com'});">
+            FREE DOWNLOAD
+          </a>
+          
+          <div class="user-unauthorized">
+            <div class="logIn-holder">
+              <button onclick="showLogin()" itemprop="url" class="log-in" onmousedown="jTracking.trackEvent({ customEvent: 'account', category: 'account', action: 'log-in', label: 'header' });">
+                <div class="logOut-user item">
+                  <span class="userName">Sign in</span>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+    <main class="main">
+      <section class="first-section">
+        <div class="container">
+          <div class="content">
+
+          </div>
+        </div>
+      </section>
+      <section class="second-section">
+        <div class="container">
+          <div class="content">
+
+          </div>
+        </div>
+      </section>
+    </main>
+	</div>
+
+  <script src="js/js.js"></script>
+</body>
+</html>
