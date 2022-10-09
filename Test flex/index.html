@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Header fixed</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link type="text/css" rel="stylesheet" href="scss/style.css" />
+</head>
+<body>
+	<div class="wrapper">
+    <header id="header" class="header">
+      Header
+    </header>
+    <main class="main">
+      <section class="section-block">
+        <div class="container">
+
+          <div class="float-block clearfix">
+            <div class="float element"></div>
+            <div class="element">
+              <span>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos cumque tenetur accusamus laudantium natus modi quod eaque necessitatibus consectetur quibusdam ex nihil, temporibus porro magni quisquam magnam illo ipsam iste iure cum vel perspiciatis possimus! Minima quo iure omnis labore? Voluptatum maiores culpa, quasi eligendi consequuntur porro placeat, deserunt laboriosam minus assumenda expedita aperiam amet at! Cumque, sapiente delectus. Facere et at, quisquam eos maxime commodi iste dolorem blanditiis! Quidem omnis laudantium rem vel, eveniet alias veritatis nulla delectus aspernatur corporis laboriosam dignissimos quae magni eligendi non, deserunt nostrum libero voluptatibus cum vero sapiente repellat cupiditate modi. Sit, ipsum sapiente.
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad velit explicabo cupiditate cumque tempore quos amet autem tempora ipsam mollitia.
+              </span>
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="box">1</div>
+            <div class="box">2</div>
+            <div class="box">3</div>
+          </div>
+  
+  
+          <h2>:first-child and :first-of-type</h2>
+          <div class="versus">
+            <p>I am the First Child</p>
+            <h4>I am the first of type Child</h4>
+            <h4>I am the third Child</h4>
+            <p>I am the fourth Child</p>
+          </div>
+  
+          <div class="parent">
+            <h1>Child</h1>   <!-- .parent > :first-of-type -->
+            <div>Child</div> <!-- .parent > :first-of-type -->
+            <p>Lorem, ipsum.</p> <!-- .parent > :first-of-type -->
+            <h3>lolo</h3>
+            <div>Child</div>
+            <div>Child</div>
+  
+          </div>
+  
+          <div class="parent2">
+            <h1>Child</h1>   <!-- h1:first-child, h1:first-of-type -->
+            <div>:nth-child(2)</div> <!-- div:nth-child(2), div:first-of-type -->
+            <div>Child</div>
+            <div>Child</div>
+          </div>
+  
+          <div class="parent3">
+            <h1>Child 1</h1>
+            <div>:nth-child(2)</div>
+            <div>Child 3</div>
+            <div>Child 4</div>
+            <div>Child 5</div>
+            <div>Child 6</div>
+            <div>Child 7</div>
+            <div>Child 8</div>
+          </div>
+  
+          <div class="blocks">
+            <p class="first">
+              11111
+            </p>
+            <p class="second">
+              Lorem, ipsum.
+            </p>
+          </div>
+  
+          <div class="inline">
+            <span class="first">
+              11111
+            </span>
+            <span class="second">
+              Text dfgdg dfg d <span class="inline-block-text">Lorem, dolor sit amet consectetu</span> adipisicing elit. <span class="inline-text">INline text repellendus ratione</span> magnam architecto cum mollitia delectus ex?
+            </span>
+          </div>
+  
+          <div class="ib tac">
+            <div class="child">asd</div>
+            <div class="child">asd</div>
+            <div class="child">asd <span>asdaw</span></div>
+          </div>
+  
+          <!-- custom checkbox -->
+          <div class="custom">
+            <label class="custom-label"> Custom checkbox
+              <input class="custom-input" type="checkbox">
+              <span class="fake"></span>
+            </label>
+          </div>
+
+          <!-- centering element -->
+          <div class="centering">
+            <div class="box"></div>
+          </div>
+
+          <!-- type="file" -->
+          <div class="type-file">
+            <label class="label-file" for="input-file">
+              <input id="input-file" class="input-file" type="file">
+              <span>Click here</span>
+            </label>
+          </div>
+
+          <!-- selector attr -->
+          <div class="attr-block">
+            <input type="text">
+            <input type="password">
+          </div>
+
+
+          <!-- rotation -->
+          <div class="rotation"></div>
+
+
+          <!-- perspective -->
+          <div class="perspective-block">
+            <div class="child"></div>
+          </div>
+
+
+          <!-- transform-origin -->
+          <div class="origin-block">
+            <ul class="list">
+              <li class="item"><span>The first</span></li>
+              <li class="item"><span>item</span></li>
+              <li class="item"><span>the third item</span></li>
+              <li class="item"><span>item</span></li>
+            </ul>
+          </div>
+
+
+          <!-- rotated text -->
+          <div class="rotated-block">
+            <div class="rotated-content">
+              <h2 class="title">
+                <span>
+                  EXCLUSIVE
+                </span>
+              </h2>
+              <h3 class="sub-title">
+                Pre-Black Friday Sale
+              </h3>
+              <div class="text">
+                <p class="text-up">
+                  <span>Up</span>
+                  <span>To</span>
+                </p>
+                <p class="text-off">
+                  20% off
+                </p>
+              </div>
+              <div>
+                <a href="#" class="btn">save your money</a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      Footer
+    </footer>
+
+	</div>
+
+</body>
+</html>

@@ -36,9 +36,12 @@
 
 //----------------------------
 //1)
-// let str1 = 'There is a str one',
-//    str2 = 'There is the second str';
-//    someValue = 2020;
+let str1 = 'There is a str one',
+   str2 = 'There is the second str';
+   someValue = 2020;
+let str = str1.toUpperCase();
+
+console.log(str1.charCodeAt(5));
 
 //    console.log(str1.length); //18
 //    console.log(str1[1]); //h (the 1 index - and we start from 0)
