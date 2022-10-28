@@ -1,3 +1,110 @@
+let a = +prompt('number', 0);
+
+function simple() {
+    next:
+    for (let i = 2; i <= a; i++) {
+        if (a % i === 0) {
+            console.log(a);
+            continue next;
+        }
+    }
+    console.log(a + 'НЕпростое');
+}
+
+simple();
+
+
+
+// function showSum(a, b) {
+//     return a + b;
+// }
+
+// let result = showSum(10, 1);
+// alert(result);
+
+// function chacekAge(age) {
+//     if ( age >= 18 ) {
+//         return true;
+//     } else {
+//         return confirm('А разрешили тебе???');
+//     }
+// }
+
+// let age = prompt('How old are you?', 0);
+
+// if ( chacekAge(age) === true ) {
+//     alert('Доступ разрешен!');
+// } else {
+//     alert('Нельзя!!!');
+// }
+
+
+// function sms() {
+//     console.log('SMS');
+// }
+// sms();
+
+// let qqq = 111;
+
+// function global() {
+//     function internal() {
+//         console.log('internal message');
+//     }
+//     internal();
+// }
+// global();
+
+
+
+// function calc(one, two) {
+//     console.log(one);
+//     console.log(two);
+
+//     let summ = one + two;
+//     console.log(summ);
+// }
+
+// calc(1, 12);
+
+
+
+// let user = 'Vanya';
+// function rename(){
+//     let user = 'Illya';
+//     console.log(user);
+// }
+// rename();
+// console.log(user);
+// // console.log(user);
+
+
+// let title = document.querySelector('.title');
+
+// console.log(title.getAttribute('name'));
+// title.setAttribute('name', 'qqq');
+// console.log(title);
+// // title.removeAttribute('name');
+// title.setAttribute('id', 'myId');
+
+// let myId = document.getElementById('myId');
+// console.log(myId);
+
+// myId.style.color = 'red';
+
+// if ( title.hasAttribute('name') ) {
+//     console.log('Yes');
+// }
+
+
+// let message = '1';
+
+// function message2(){
+//     let message = '2';
+//     console.log(message);
+// }
+// message2();
+// console.log(message);
+
 // function sayHi() {
 //    console.log('Hello!');
 // }
@@ -164,24 +271,24 @@
 // test2(); // 4
 // так как функция test() замкнула внутри себя Scope и с = 5 во второй функции никак не влияет на нее Scope () Lexical environment
 
-// // OR
+// // // OR
 
-let c = 4;
-let d = 5;
-// запишем функцию test()
-function test() {
-    let a = 3;
-    console.log(c);
-}
-test(); // 4
-// объявляем вторую функцию и в ней запускаем первую test()
-// и пытаемся поменять переменную С внутри второй функции
-function test2() {
-    let c = 5;
-    // console.log(c); // 5
-    test();
-}
-// но здесь мы переопределяем с = 8 и переменная становиться равная 8
-c = 8;
-test2(); // 8
-// так как функция test() замкнула внутри себя Scope и с = 5 во второй функции никак не влияет на нее Scope () Lexical environment, но повлияет перемення c = 8 из глобального лексического окружения
+// let c = 4;
+// let d = 5;
+// // запишем функцию test()
+// function test() {
+//     let a = 3;
+//     console.log(c);
+// }
+// test(); // 4
+// // объявляем вторую функцию и в ней запускаем первую test()
+// // и пытаемся поменять переменную С внутри второй функции
+// function test2() {
+//     let c = 5;
+//     // console.log(c); // 5
+//     test();
+// }
+// // но здесь мы переопределяем с = 8 и переменная становиться равная 8
+// c = 8;
+// test2(); // 8
+// // так как функция test() замкнула внутри себя Scope и с = 5 во второй функции никак не влияет на нее Scope () Lexical environment, но повлияет перемення c = 8 из глобального лексического окружения

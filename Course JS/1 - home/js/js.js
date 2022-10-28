@@ -36,13 +36,6 @@
 
 //----------------------------
 //1)
-let str1 = 'There is a str one',
-   str2 = 'There is the second str';
-   someValue = 2020;
-let str = str1.toUpperCase();
-
-console.log(str1.charCodeAt(5));
-
 //    console.log(str1.length); //18
 //    console.log(str1[1]); //h (the 1 index - and we start from 0)
 //    console.log(str1.toLowerCase());
@@ -68,7 +61,6 @@ console.log(str1.charCodeAt(5));
 
 //Strings - tasks
 //----------------------------
-// let string = 'some test string';
 
 // //1) the first and the last letter of the row
 // console.log(`${string[0] + ' and ' + string[string.length - 1]}`);
@@ -110,6 +102,7 @@ console.log(str1.charCodeAt(5));
 
 // // 10) Задача. Дана строка 'aaa bbb ccc'. Вырежите из нее слово 'bbb' тремя разными способами
 // let str = 'aaa bbb ccc';
+
 // console.log(str.substr(4, 3));
 // console.log(str.substring(4, 7));
 // console.log(str.slice(4, -4)); // or (4, 7)
@@ -138,7 +131,9 @@ console.log(str1.charCodeAt(5));
 // let str = 'я учу javascript!';
 // console.log(str.indexOf('учу'));
 
-// // 13) Дана переменная str, в которой хранится какой-либо текст. Реализуйте обрезание длинного текста по следующему принципу: если количество символов этого текста больше заданного в переменной n, то в переменную result запишем первые n символов строки str и добавим в конец троеточие '...'. В противном случае в переменную result запишем содержимое переменной str.
+// // 13) Дана переменная str, в которой хранится какой-либо текст. Реализуйте обрезание длинного текста по следующему принципу: если количество символов этого текста больше заданного в 
+        // переменной n, то в переменную result запишем первые n символов строки str и добавим в конец троеточие '...'. В противном случае в переменную result запишем содержимое переменной str.
+// console.log(n);
 // let n = prompt('Enter the number', 0);
 // let str = 'some text is here';
 // let result = '';
@@ -153,7 +148,7 @@ console.log(str1.charCodeAt(5));
 // }
 // console.log(result, typeof result);
 
-// // 14) Дана строка 'Я-учу-javascript!'. Замените все дефисы на '!' с помощью глобального поиска и замены
+// 14) Дана строка 'Я-учу-javascript!'. Замените все дефисы на '!' с помощью глобального поиска и замены
 // let str = 'Я-учу-javascript!';
 // console.log(str);
 // str = str.replace(/-/g, '!');
@@ -208,7 +203,7 @@ console.log(str1.charCodeAt(5));
 // console.log(str);
 
  // // 20) Преобразуйте строку 'var_test_text' в 'varTestText'. Скрипт, конечно же, должен работать с любыми аналогичными строками.
-//  let str = 'var_test_text';
+// let str = 'var_test_text';
 // str = str.split('_');
 //  console.log(str);
 //  for (let i = 0; i < str.length; i++) {
@@ -247,7 +242,7 @@ console.log(str1.charCodeAt(5));
 
 //-------------------------
 //Numbers - tasks
-//1)Pi and round it to 2 values
+//1)Pi and round it to 2 values typeof Pi);
 // let pi = Math.PI;
 // pi = pi.toFixed(2); //3.14
 // console.log(pi);
@@ -255,12 +250,13 @@ console.log(str1.charCodeAt(5));
 // console.log(Math.min(10, 115, 12, 90, 50)); //10
 // console.log(Math.max(10, 115, 12, 90, 50)); //115
 //3) random number and round it
-//let rand = Math.random();
+// let rand = Math.random();
 // console.log(rand);
 // console.log(rand.toFixed(2));
 //[0, 10)
 // console.log(rand * 10);
 // //[0, 10) - integer number (without float numbers)
+// console.log(Math.floor(Math.random() * 10));
 // console.log((rand.toFixed(1) * 10));
 
 //(min, max)
@@ -276,12 +272,12 @@ console.log(str1.charCodeAt(5));
 //console.log(+(0.6 + 0.7).toFixed(2)); //1.3 - it is number
 
 //5) to get number from the string '100$'
-//let $ = '100$';
+// let $ = '100$';
 //console.log(parseInt($)); //100 - is number now
 
 // 6)  Даны переменные a = 10 и b = 3. Найдите остаток от деления a на b. Показать решение.
 // let a = 10;
-// let b = 5;
+// let b = 3;
 // console.log(a % b);
 
  // 7) Даны переменные a и b. Проверьте, что a делится без остатка на b. Если это так - выведите 'Делится' и результат деления, иначе выведите 'Делится с остатком' и остаток от деления.
@@ -301,6 +297,20 @@ console.log(str1.charCodeAt(5));
 // console.log(a);
 
 // // 10) Заполните массив 10-ю случайными целыми числами. (Подсказка: нужно воспользоваться циклами for или while)
+// let arr = [];
+// for ( let i = 0; i < 10; i++) {
+//     arr[i] = Math.floor(Math.random() * 10);
+// }
+// console.log(arr);
+
+// let arr_2 = [];
+// let i = 0;
+// while (i < 10) {
+//     arr_2[i] = Math.floor(Math.random() * 10);
+//     i++;
+// }
+// console.log(arr_2);
+//  // OR
 // let arr = [];
 // let a;
 // for (let i = 0; i < 10; i++) {
@@ -329,7 +339,15 @@ console.log(str1.charCodeAt(5));
 // console.log(res, typeof res); // 35 (all right)
 
  // // 13) Напишите скрипт, который будет находить факториал числа. Факториал (обозначается !) - это произведение (умножение) всех целых чисел, меньше данного, и его самого. Например, 4! = 1*2*3*4.
-// let a = 4;
+// let a = 5;
+// let res = 1;
+// for ( let i = a; i > 0; i--) {
+//     res = res * a;
+//     a--;
+// }
+// console.log(res);
+
+
 // let res = 1;
 // for ( let i = 1; i <= a; i++ ) {
 //    // console.log(i);
@@ -417,15 +435,20 @@ console.log(str1.charCodeAt(5));
 //--------------------------
 // let a = 5;
 // console.log(a++);// 5
-// console.log(++a); //6
+// console.log(++a); //7
 // console.log(`Префиксный инкремент ${++a}`); //6
 
-// let res_1 = 20 - 2 + 'ZZZ' + 4 - 3; //NaN
+// let res_1 = 20 - 2 + 'ZZZ' + 4 - 3; //'18zzz4' - 3 = NaN
 // let res_2 = 20 - 2 + 'ZZZ' + 4; //'18ZZZ4'
 // console.log(res_1, res_2);
 
 // let res_3 = +'25';
 // console.log(res_3, typeof (res_3));
+
+// let res_7 = '25' - 5;
+// let res_8 = 10 * '80';
+// let res_9 = 10 * 'sss';
+// console.log(res_7, res_8, res_9);
 
 
 
@@ -626,6 +649,7 @@ console.log(str1.charCodeAt(5));
 
 // // 7) Создайте массив с числами. Прибавьте к каждому элементу массива число 3. Выведите на экран измененный массив.
 // let arr = [21, 3, 5];
+
 // arr[0] = arr[0] + 3;
 // arr[1] = arr[1] + 3;
 // arr[2] = arr[2] + 3;
@@ -633,6 +657,7 @@ console.log(str1.charCodeAt(5));
 
 // // 8) Создайте массив с элементами 1, 2 и 3. С помощью оператора ++ увеличьте каждый элемент массива на единицу.
 // let arr = [1, 2, 3];
+
 // arr[0]++;
 // ++arr[1];
 // console.log(arr[0]++, ++arr[1], arr[2]);
@@ -662,3 +687,361 @@ console.log(str1.charCodeAt(5));
 // arr[3] = 'a';
 // arr[8] = 'b';
 // console.log(arr.length); // 9
+
+
+
+
+
+// // conditions
+// let message = (98 > '11' && 70 < 100) ? 'TRUE' : 'FALSE';
+// console.log(message);
+
+// console.log(98 > '11');
+
+// console.log('a'.charCodeAt(), 'A'.charCodeAt());
+
+
+// if (5 == '5') {
+//    console.log('TRUE');
+// }
+// else {
+//    console.log("FALSE");
+// }
+
+
+
+// if (0) {
+//    console.log('FALSE');
+// }
+// else if (' ') {
+// console.log("TRUE"); //TRUE, because the second condition contains the space '_'
+// }
+
+
+
+// let x = 'hidden';
+
+// x = (x == 'hidden') ? 'visible' : 'hidden'; // hidden
+// console.log(x);
+
+
+
+// let x = 1;
+// if (x == 0) {
+//    x += 1;   // x = x + 1
+// }
+// else if ( x < 0) {
+//    x = 'less then 0';
+// }
+// else if ( x > 0) {
+//    x = x * 10;
+// }
+// else {
+//    x = 1;
+// }
+// console.log(x);
+
+// let x = 0;
+// x = (x == 0) ? x + 1 :
+//     (x < 1) ? 'less then 0' :
+//     (x > 1) ? x * 10 : 1;
+// console.log(x);
+
+// let a = 'qwerty';
+
+// switch (a) {
+//         case 'qwe':
+//         console.log('1');
+//         break;
+//         case 'qwerty':
+//                 console.log('exactly');
+//                 break;
+//                 default:
+//                         console.log('default');
+// }
+
+
+
+// let a = true;
+// // a = +a;
+// console.log(+a, typeof(a));
+
+// console.log('12' > 2); //true
+// console.log('23' > '2'); //false (only strs comparing (UTF table))
+// console.log(null == 0);
+
+
+
+//-----------------------------
+// // transfering types - tasks
+// console.log(parseInt('200px')); //200
+
+// console.log(1 + '15'); // 115 (string)
+// console.log(100 - '18'); // 82 (number)
+// console.log('string' == true); // NaN == 1 -> false
+// console.log(undefined == null); // true, only under this ==
+// console.log(null + ''); //'null'
+// console.log(null + 5); //0 + 5 -> 5
+
+// console.log('12' > 2); // true, 12 > 2
+// console.log('12' > '2'); //false, regarding the table UTF '1' < '2', -> '12' < '2'
+
+// console.log(true < 2); //true, true == 1
+
+// console.log(false == 0); // true, false -> 0 (in number transfering)
+
+// console.log(undefined == false); // false, undefined == null - and just in this case
+// console.log(null == false); // false
+
+// console.log(0 || 'str'); // 'str'
+// console.log(1 && 'str'); // 'str'
+// console.log(null || 25); // 25
+// console.log(null && 25); // null
+// console.log(null || 0 || 35); //35
+// console.log(null && 0 && 35); //null
+
+// console.log(Number(undefined));// NaN
+// console.log(null + 5); // 5
+// console.log(true + undefined); //NaN
+
+// console.log(12 + 14 + '12'); //'2612'
+// console.log(3 + 2 - '1'); // 4
+// console.log('3' + 2 - 1); // 31
+// console.log(true + 2); // 3
+// console.log(+'10' + 1); // 11
+// console.log(undefined + 2); //NaN   (Number(undefined) -> NaN,   NaN + 2 -> NaN)
+// console.log(null + 5); // 5
+// console.log(true + undefined); //NaN
+
+
+
+// console.log(5 > 4); //true
+// console.log('ананас' > 'яблоко'); // false   ('я' > 'а')
+// console.log('ананас' > 'Яблоко'); // true   ('Я' < 'а')
+// console.log('2' > '12'); // true
+// console.log(undefined == null); // true
+// console.log(undefined === null); // false (types are different!)
+// console.log(null == '\n0\n'); // \n - перевод строки  -> false , null == undefined
+// console.log('\n' == false); // true
+// console.log(null === +'\n0\n'); // false (types are different)
+// console.log(true + false); //1
+// console.log(NaN == NaN); // false
+
+
+// task 1
+// let strOne = 'i am in the easycode';
+// let newStrOne = '';
+
+
+// for (let i = 0; i < strOne.length; i++) {
+//         // newStrOne[0] = newStrOne[0] + strOne[0].toUpperCase();
+
+//         if (strOne[i] === ' ') {
+//                 // strOne[i + 1] = strOne[i + 1].toUpperCase()
+//                 newStrOne = newStrOne + strOne[i] + strOne[i + 1].toUpperCase();
+//                 i++;
+//         } else if (i === 0) {
+//                 newStrOne = newStrOne + strOne[0].toUpperCase();
+//         } else {
+//                 newStrOne = newStrOne + strOne[i];
+//         }
+// }
+// console.log(newStrOne);
+
+// strOne = strOne.split(' ');
+
+// for (let i = 0; i < strOne.length; i++) {
+//         strOne[i] = strOne[i].replace(strOne[i][0], strOne[i][0].toUpperCase());
+// }
+// console.log(strOne);
+// strOne = strOne.join(' ');
+// console.log(strOne);
+
+
+
+// // Задача_2
+let strTwo = 'tseb eht ma i';
+let newStrTwo = '';
+
+// for (let i = 1; i <= strTwo.length; i++) {
+
+//         newStrTwo = newStrTwo + strTwo[strTwo.length - i];
+
+// }
+
+// for (let i = (strTwo.length - 1); i >= 0; i--) {
+//  newStrTwo += strTwo[i];
+// }
+
+// console.log(newStrTwo);
+
+
+// // // Задача_3
+// let j = 5;
+// let factorial = 1;
+// let i = 1;
+
+// while ( i <= j) {
+//         factorial *= i;
+//         i++;
+// }
+// console.log(factorial);
+
+// for (let i = 1; i <= j; i++) {
+//        factorial = factorial * i; 
+// }
+// console.log(factorial);
+
+
+
+// // Задача_4
+// let strThree = 'Считаем до 10и:';
+
+// for (let i = 1; i <= 10; i++) {
+//         strThree = strThree + i;
+// }
+// console.log(strThree);
+
+// let strFive = 'JavaScript is a pretty good language';
+// let newStrFive = '';
+
+// for (let i = 0; i < strFive.length; i++) {
+
+//         // if ( strFive[i] === ' ' ) {
+//         //         newStrFive += strFive[i + 1].toUpperCase();
+//         //         i++;
+//         // } else if (i === 0) {
+//         //         newStrFive += strFive[i].toUpperCase();
+//         // }
+//         //  else {
+//         //         newStrFive += strFive[i];
+//         // }
+// // // OR
+//         // if ( strFive[i] === ' ' ) {
+//         //         continue;
+//         // } else {
+//         //         newStrFive = newStrFive + strFive[i];
+//         // }
+
+// }
+// console.log(newStrFive);
+
+
+
+// // Задача_6
+// for (let i = 0; i <= 15; i++) {
+//         if ( i % 2 === 0 ) {
+//                 continue;
+//         } else {
+//                 console.log(i);
+//         }
+// }
+
+
+// // Дополнительная задача
+
+// let users = [
+//     {"gender":"Female","name":"Debra","job":"Photofeed"},
+//     {"gender":"Male","name":"Martin","job":"Linkbuzz"},
+//     {"gender":"Male","name":"Howard","job":"Photofeed"},
+//     {"gender":"Male","name":"Jimmy","job":"Zoomdog"},
+//     {"gender":"Female","name":"Louise","job":"Vidoo"},
+//     {"gender":"Male","name":"Philip","job":"Feedfish"},
+//     {"gender":"Male","name":"Andrew","job":"Zoomdog"},
+//     {"gender":"Male","name":"Anthony","job":"Jamia"},
+//     {"gender":"Male","name":"Jack","job":"Divanoodle"},
+//     {"gender":"Male","name":"Philip","job":"Fadeo"},
+//     {"gender":"Male","name":"Henry","job":"Feedfish"},
+//     {"gender":"Male","name":"Robert","job":"Jazzy"},
+//     {"gender":"Male","name":"Alan","job":"Skynoodle"},
+//     {"gender":"Male","name":"Chris","job":"Browsetype"},
+//     {"gender":"Female","name":"Katherine","job":"Realblab"},
+//     {"gender":"Female","name":"Martha","job":"Jazzy"},
+//     {"gender":"Male","name":"Paul","job":"Jazzy"},
+//     {"gender":"Male","name":"Carlos","job":"Jazzy"},
+//     {"gender":"Male","name":"Ernest","job":"Tagfeed"},
+//     {"gender":"Male","name":"Adam","job":"Skidoo"},
+//     {"gender":"Female","name":"Denise","job":"Babbleopia"},
+//     {"gender":"Female","name":"Stephanie","job":"Skyvu"},
+//     {"gender":"Female","name":"Julia","job":"Topicstorm"},
+//     {"gender":"Female","name":"Donna","job":"Meeveo"},
+//     {"gender":"Male","name":"Lawrence","job":"Skyvu"},
+//     {"gender":"Female","name":"Pamela","job":"Meeveo"},
+//     {"gender":"Male","name":"Billy","job":"Skyvu"},
+//     {"gender":"Male","name":"Donald","job":"Feedspan"},
+//     {"gender":"Male","name":"Ryan","job":"Skyvu"},
+//     {"gender":"Male","name":"Scott","job":"Feedspan"}
+// ];
+
+// // Перебрать в цикле массив пользователей и посчитать сколько женщин а сколько мужчин.
+// let countMan = 0;
+// let countWomen = 0;
+
+// console.log(users.length);
+// console.log(users[0]['gender']);
+
+// for (let i = 0; i < users.length; i++) {
+//         if (users[i]['gender'] === 'Male') {
+//                 countMan += 1;
+//         } else {
+//                 countWomen += 1;
+//         }
+// }
+
+// console.log(`Men: ${countMan} and women: ${countWomen}`);
+
+
+// // // Кол-во мужчин и женщин записать в объект с полями male и female соответственно.
+// let arrNew = {};
+// arrNew.male = countMan;
+// arrNew.female = countWomen;
+
+// console.log(arrNew);
+
+
+// // // Также каждому пользователю добавить поле verified со значением true;
+// for (let i = 0; i < users.length; i++) {
+//         users[i]['verified'] = true;
+// }
+// console.log(users);
+
+
+
+// // **** Повышенный уровень.
+
+// // Создать объект каждое поле которого называется также как значение в объекте users поля job
+// // и посчитать сколько человек относится к какой из професcий.
+
+// let work = {};
+// let usersObj = {};
+// usersObj['work'] = {};
+// // console.log(userObj);
+// for (let i = 0; i < users.length; i++) {
+
+//         if (work[users[i].job]) {
+//                 work[users[i].job]++;
+//         } else {
+//                 work[users[i].job] = 1;
+//         }
+
+//         console.log(work[users[i].job]);
+//         usersObj['work'][users[i].job] = work[users[i]['job']];
+// }
+// console.log(usersObj);
+
+
+
+// 1,2,5
+// let arr = [10, 20, 30, 50, 3000];
+// let str;
+
+// for (let i = 0; i < arr.length; i++) {
+
+//         str = arr[i].toString();
+//         // console.log(str);
+
+//         if ( str[0] === '1' || str[0] === '2' || str[0] === '5') {
+//                 console.log(arr[i]);
+//         }
+
+// }
