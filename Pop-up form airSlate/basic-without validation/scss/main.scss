@@ -66,34 +66,21 @@ body{
 
   .login-scroll {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
     width: 100%;
-    padding: 48px 16px;
+    padding: 16px;
     max-height: 100%;
     overflow-y: auto;
-    transform: translateX(-50%);
-  }
-}
-
-.login-container {
-  position: relative;
-  margin: 0 auto;
-  max-width: 552px;
-  width: 100%;
-}
-
-.login-logo {
-  display: flex;
-  justify-content: center;
-  margin: 0 0 60px;
-
-  @media screen and (max-width: 480px) {
-    margin: 0 0 36px;
+    transform: translate(-50%, -50%);
   }
 }
 
 .login-content {
+  position: relative;
+  max-width: 552px;
+  margin: 0 auto;
+  width: 100%;
   background-color: $white;
   padding: 48px;
   border-radius: 8px;
@@ -131,21 +118,19 @@ body{
     border: 1px solid $trolley-grey-300;
     border-radius: 4px;
     font: 400 14px/1.14 $base-font-family-sans-serif;
-    color: $trolley-grey-400;
+    color: $trolley-grey-300;
     transition: all 0.2s ease-in;
 
     &:hover {
       border-color: $trolley-grey-500;
     }
 
-    &:valid,
     &:focus {
-      color: $trolley-grey-800;
+      color: $trolley-grey-300;
     }
 
-    &:invalid:not(:focus):not(:placeholder-shown) {
+    &:invalid {
       border-color: $jelly-bean-500;
-      color: $trolley-grey-800;
       & + .input-error {
         display: block;
       }

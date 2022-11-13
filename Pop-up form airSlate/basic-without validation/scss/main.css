@@ -118,40 +118,21 @@ body {
 
 .login .login-scroll {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
   width: 100%;
-  padding: 48px 16px;
+  padding: 16px;
   max-height: 100%;
   overflow-y: auto;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.login-container {
-  position: relative;
-  margin: 0 auto;
-  max-width: 552px;
-  width: 100%;
-}
-
-.login-logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 0 0 60px;
-}
-
-@media screen and (max-width: 480px) {
-  .login-logo {
-    margin: 0 0 36px;
-  }
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .login-content {
+  position: relative;
+  max-width: 552px;
+  margin: 0 auto;
+  width: 100%;
   background-color: #fff;
   padding: 48px;
   border-radius: 8px;
@@ -195,7 +176,7 @@ body {
   border: 1px solid #AAAAAA;
   border-radius: 4px;
   font: 400 14px/1.14 "Open Sans", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
-  color: #959595;
+  color: #AAAAAA;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
 }
@@ -204,16 +185,15 @@ body {
   border-color: #808080;
 }
 
-.login-form .input-row:valid, .login-form .input-row:focus {
-  color: #414141;
+.login-form .input-row:focus {
+  color: #AAAAAA;
 }
 
-.login-form .input-row:invalid:not(:focus):not(:placeholder-shown) {
+.login-form .input-row:invalid {
   border-color: #E15554;
-  color: #414141;
 }
 
-.login-form .input-row:invalid:not(:focus):not(:placeholder-shown) + .input-error {
+.login-form .input-row:invalid + .input-error {
   display: block;
 }
 
