@@ -1,0 +1,110 @@
+@import 'include-media';
+
+@import 'reset';
+@import 'variables';
+@import 'fonts';
+@import 'typography';
+
+
+html, .wrapper {
+	min-height: 100vh;
+}
+
+.container{
+	width: 100%;
+	max-width: 1850px;
+	padding: 0 16px;
+	margin: 0 auto;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex: 1;
+}
+
+.header {
+  background-color: #ccc;
+}
+
+
+
+
+//footer
+.footer {
+  padding: 96px 0 0;
+  span {
+    margin: 20px;
+  }
+}
+
+
+
+// <!-- block with stars -->
+.rate-block {
+  margin-bottom: 100px;
+}
+.block-rating {
+  display: inline-block;
+  position: relative;
+  font-size: 40px;
+  line-height: 1;
+  color: black;
+    &::before {
+      // like a basic background stars, if they are not choosen
+      content: '★★★★★';
+      display: block;
+    }
+
+    .block-stars {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+
+      .input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+
+        // when we check our input (click onto the label)
+        &:checked,
+        &:checked ~ .label {
+          color:rgb(243, 230, 49);
+        }
+      }
+
+      .label {
+        // flex: 0 0 20%;
+        width: 20%;
+        height: 100%;
+        background-color: rgb(170, 168, 168);
+        cursor: pointer;
+        color: rgb(44, 44, 44);
+
+
+        &::before {
+          // there are stars, that we can choose
+          content: '★';
+          display: block;
+          transition: color 0.2s ease-in;
+        }
+          // during hover only for our label
+        &:hover,
+        &:hover ~ .label,
+        &:hover ~ .label:hover {
+          color:rgb(224, 241, 122);
+        }
+      }
+    }
+}
