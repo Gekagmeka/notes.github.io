@@ -1,0 +1,60 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.js-tab-block {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.js-tab-block .js-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+}
+
+.js-tab-block .js-list .js-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+.js-tab-block .js-list .js-item .js-link {
+  display: inline-block;
+  padding: 5px 10px;
+  white-space: nowrap;
+  background-color: #ddafaf;
+}
+
+.js-tab-block .js-list .js-item .js-link.active {
+  width: 100%;
+  background-color: #d47c7c;
+}
+
+.js-tab-block .js-content .item {
+  display: none;
+}
+
+.js-tab-block .js-content .item.active {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */

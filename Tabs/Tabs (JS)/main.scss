@@ -1,0 +1,48 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.container {
+   max-width: 1000px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.content {
+   max-width: 600px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+// <!-- tabs HTML + js -->
+.js-tab-container {
+   max-width: 800px;
+   width: 100%;
+   margin: 0 auto;
+ 
+   .js-tab-list {
+     display: flex;
+     overflow-x: auto;
+ 
+     .js-tab-item {
+       flex: 1;
+       text-align: center;
+       border: 1px solid #ccc;
+       white-space: nowrap;
+       background-color: rgb(231, 146, 146);
+     }
+ 
+   }
+ 
+   .js-tab-content {
+     .item {
+       display: none;
+ 
+       &.active {
+         display: block;
+       }
+     }
+   }
+ }

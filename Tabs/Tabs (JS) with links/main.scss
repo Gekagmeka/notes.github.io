@@ -1,0 +1,58 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.container {
+   max-width: 1000px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+.content {
+   max-width: 600px;
+   width: 100%;
+   margin: 0 auto;
+}
+
+// <!-- tabs HTML + js + link -->
+.js-tab-block {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+
+  .js-list {
+    display: flex;
+    overflow-x: auto;
+
+    .js-item {
+      flex: 1;
+      text-align: center;
+      border: 1px solid #ccc;
+      
+      .js-link {
+        display: inline-block;
+        padding: 5px 10px;
+        white-space: nowrap;
+        background-color: rgb(221, 175, 175);
+      
+        &.active {
+          width: 100%;
+          background-color: rgb(212, 124, 124);
+        }
+      }
+    }
+
+  }
+
+  .js-content {
+    .item {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
